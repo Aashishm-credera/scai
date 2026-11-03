@@ -1,0 +1,47 @@
+﻿---
+ID: "9a13ef76-e65f-4911-97f9-0fcc47e12259"
+Parent: "895e25c4-12b2-4b2c-8233-82f3b79eef53"
+Template: "bc71d442-3e4f-46ba-887c-746e54f9bb83"
+Path: /sitecore/system/Settings/Services/Rendering Hosts/Local
+SharedFields:
+- ID: "3121c257-53cf-464a-b736-98b418876057"
+  Hint: AppName
+  Value: "abc-dev-sites"
+- ID: "94470b31-e282-4d8d-bc54-85689efb294c"
+  Hint: ServerSideRenderingEngineConfigUrl
+  Value: "https://nextjs.xmc-starter-js.localhost/api/editing/config"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "419a9220-5d2e-4c80-b513-9ddc90344d72"
+- ID: "e32c1801-79b3-4fc1-a9c4-3c6e6c2968ae"
+  Hint: ServerSideRenderingEngineApplicationUrl
+  Value: "https://nextjs.xmc-starter-js.localhost"
+- ID: "fc76919b-0d7c-4732-865d-2af795fb38a4"
+  Hint: ServerSideRenderingEngineEndpointUrl
+  Value: "http://rendering-nextjs:3000/api/editing/render"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261005T092117Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6fb0fbd5-aa77-43ae-a5d5-87bc7a97d354"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261007T112920Z

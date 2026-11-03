@@ -1,0 +1,23 @@
+﻿---
+ID: "4b6175d9-513f-4628-968c-caa333282ed6"
+Parent: "6f6c7916-2503-441e-8100-3483c737cef2"
+Template: "a5625d96-57ae-4faa-b0b5-dd757c936aac"
+Path: /sitecore/content/abc/Heart/Data/Emergency Callouts
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261023T052532Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "583a7032-3bf6-41a9-9759-33b031376781"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261023T052532Z

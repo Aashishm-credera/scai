@@ -1,0 +1,149 @@
+﻿---
+ID: "b5b45efa-c1fc-42a0-bfe5-0231780d2785"
+Parent: "9ca06bd0-cd73-4718-9a3d-d000d07ec771"
+Template: "bca0e629-150f-41dd-893b-f4b65338c0b7"
+Path: /sitecore/system/Settings/Feature/Experience Accelerator/GridTailwind/Tailwind Grid Definition/Extra Extra Large
+SharedFields:
+- ID: "39d6d2c4-f31e-4310-ab2d-f6d5c9cb89fd"
+  Hint: BreakpointMax
+  Value: 
+- ID: "3b2c405a-5a69-4ce9-a28a-0e72715f159a"
+  Hint: BreakpointMin
+  Value: 99999
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 350
+Languages:
+- Language: da
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Desktop XL
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "b55a9065-9589-41d8-997b-9b4592852134"
+      Hint: Tooltip
+      Value: Layoutindstillinger for computere med ekstra store skærme.
+- Language: "de-DE"
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "{383844E7-4E28-4D45-AE48-640380EF63D8}"
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Desktop XL
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261016T062856Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "{1EB7272F-8314-463E-A3CD-0FE6977E5E53}"
+    - ID: "b55a9065-9589-41d8-997b-9b4592852134"
+      Hint: Tooltip
+      Value: Layouteinstellungen für Computer mit extra großen Bildschirmen.
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261016T062856Z
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Not used (2xl)
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20161216T080538Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "9d2dd00c-0d8c-4e4c-b703-9f4c13fe14b4"
+    - ID: "b55a9065-9589-41d8-997b-9b4592852134"
+      Hint: Tooltip
+      Value: Layout settings for computers with extra large screens. 
+- Language: "ja-JP"
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "{383844E7-4E28-4D45-AE48-640380EF63D8}"
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: デスクトップ特大
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261016T062856Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "{1EB7272F-8314-463E-A3CD-0FE6977E5E53}"
+    - ID: "b55a9065-9589-41d8-997b-9b4592852134"
+      Hint: Tooltip
+      Value: 特大画面コンピュータのレイアウト設定。
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261016T062856Z
+- Language: "zh-CN"
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "{383844E7-4E28-4D45-AE48-640380EF63D8}"
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: 台式机 XL
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261016T062856Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "{1EB7272F-8314-463E-A3CD-0FE6977E5E53}"
+    - ID: "b55a9065-9589-41d8-997b-9b4592852134"
+      Hint: Tooltip
+      Value: 超大屏幕计算机的布局设置。
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261016T062856Z

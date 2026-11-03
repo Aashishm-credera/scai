@@ -1,0 +1,8 @@
+{
+  "nodeVersion": "24.16.0",
+  "wrapper": {
+    "variant": "variant-1",
+    "patchConfig": true,
+    "includeRedisPageCache": false
+  }
+}

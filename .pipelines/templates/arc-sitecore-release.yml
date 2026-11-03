@@ -1,0 +1,64 @@
+parameters:
+  - name: AzureServiceConnection
+    type: string
+  - name: SolutionPath
+    type: string
+    default: ''
+  - name: Environments
+    type: object
+  - name: SelfHostedPool
+    type: string
+    default: ''
+
+variables:
+  - name: IsManualRun
+    value: $[eq(variables['Build.Reason'], 'Manual')]
+
+stages:
+  - ${{ each environment in parameters.Environments }}:
+    - ${{ if eq(environment.deployRestriction, true) }}:
+      # ══════════════════════════════════════════════════════════════
+      # Stage: Deploy to SitecoreAI, Serialise Items and Deploy Editing Host(s)
+      # ══════════════════════════════════════════════════════════════
+      - stage: Deploy_SitecoreAI_${{ replace(environment.env, '-', '_') }}
+        displayName: "${{ environment.env }} Deploy SitecoreAI"
+        ${{ if ne(environment.dependentEnvironment, '') }}:
+          dependsOn: 
+            - Deploy_SitecoreAI_${{ replace(environment.dependentEnvironment, '-', '_') }}
+        variables:
+          - ${{ if ne(environment.variableGroup, '') }}:
+            - group: ${{ environment.variableGroup }}
+        jobs:
+          - deployment: Deploy_SitecoreAI
+            displayName: "Deploy (Serialise, SitecoreAI, Editing Host(s)"
+            pool:
+              ${{ if ne(parameters.SelfHostedPool, '') }}:
+                name: ${{ parameters.SelfHostedPool }}
+              ${{ else }}:
+                vmImage: ubuntu-latest
+            environment: ${{ environment.env }}
+            strategy:
+              runOnce:
+                deploy:
+                  steps:
+
+                    - checkout: self
+                      path: 'code'
+                      fetchDepth: 0
+                      persistCredentials: true
+                    
+                    - task: DWSitecoreApp@1
+                      displayName: "Arc: Deploy Sitecore AI"
+                      inputs:
+                        Action: deploy
+                        ${{ if ne(environment.azureServiceConnection, '') }}:
+                          # Overridable service connection if environments deploy to a different subscription, e.g. Production vs DEV/UAT.
+                          AzureSubscription: ${{ environment.azureServiceConnection }}
+                        ${{ else }}:
+                          AzureSubscription: ${{ parameters.AzureServiceConnection }}
+                        EnvironmentName: ${{ environment.env }}
+                        PlatformFile: $(Agent.BuildDirectory)/code/.pipelines/${{ environment.platformFile }}
+                        AppFile: $(Agent.BuildDirectory)/code/.pipelines/${{ environment.appFile }}
+                        SolutionPath: $(Agent.BuildDirectory)/code/${{ parameters.SolutionPath }}
+                        # Manual queue → force every action; push/CI → honour change detection.
+                        ForceDeploy: $(IsManualRun)

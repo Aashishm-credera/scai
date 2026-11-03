@@ -1,0 +1,29 @@
+﻿---
+ID: "75235227-2d63-4e99-af4d-39997cfadc11"
+Parent: "ba4060e1-aaf5-447e-bdf5-257ccf92f14b"
+Template: "e993ed83-86b6-4d96-aa67-a7e304865f44"
+Path: /sitecore/content/abc/Heart/Presentation/Page Branches/Guide Page/$name/Data/Testing and Diagnosis
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261027T092503Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f493671a-84ba-4fe4-821a-4eda584939e7"
+    - ID: "b5fe3c1f-1103-44b9-bdcc-70db4ab08f6b"
+      Hint: Heading
+      Value: "Testing &amp; Diagnosis"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T092512Z

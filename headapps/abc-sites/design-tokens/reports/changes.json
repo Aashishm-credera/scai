@@ -1,0 +1,46 @@
+{
+  "baseline": "design-tokens/generated/baseline.json",
+  "summary": {
+    "baselineCount": 2763,
+    "currentCount": 2767,
+    "unchanged": 2763,
+    "removed": 0,
+    "modified": 0,
+    "added": 4,
+    "semverSuggestion": "MINOR"
+  },
+  "removed": [],
+  "added": [
+    {
+      "name": "--abc-transition-control-duration",
+      "value": "90ms",
+      "layer": "semantic"
+    },
+    {
+      "name": "--abc-transition-control-duration@reduced",
+      "value": "0ms",
+      "layer": "semantic"
+    },
+    {
+      "name": "--abc-transition-control-easing",
+      "value": [
+        0.2,
+        0.8,
+        0.3,
+        1
+      ],
+      "layer": "semantic"
+    },
+    {
+      "name": "--abc-transition-control-easing@reduced",
+      "value": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "layer": "semantic"
+    }
+  ],
+  "modified": []
+}

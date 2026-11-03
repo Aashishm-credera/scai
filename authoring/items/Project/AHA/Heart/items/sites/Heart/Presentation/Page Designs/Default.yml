@@ -1,0 +1,42 @@
+﻿---
+ID: "7f0dbafe-ec86-42cd-b6ed-bf0872520c95"
+Parent: "fcbfc54b-9e3d-4bf6-8faf-4d84fc043528"
+Template: "1105b8f8-1e00-426b-bf1f-c840742d827b"
+Path: /sitecore/content/abc/Heart/Presentation/Page Designs/Default
+SharedFields:
+- ID: "0966b999-0d0e-4278-acc9-9da69d461fe6"
+  Hint: PartialDesigns
+  Value: "{3C6891F0-B207-4E98-99CC-CD3BC7B76043}|{4CE5BA41-B31C-470B-ABFC-D2FA71757AFA}|{FEFCD0F2-254B-4858-A1AC-490F74FFDF07}"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{42F8A232-F2EF-4F9D-87F2-FCEF2D153D07}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "7617299d-5aa6-4315-9325-cbe501ec35ef"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260923T222533Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\mehedi@dataweavers.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\mehedi@dataweavers.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "58b0a1dd-1060-49e9-8ced-7b57f2d61e2d"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261007T095733Z

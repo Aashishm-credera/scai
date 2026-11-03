@@ -1,0 +1,23 @@
+﻿---
+ID: "85d5c695-2be6-4651-b493-1e1908233790"
+Parent: "6f6c7916-2503-441e-8100-3483c737cef2"
+Template: "406001db-1080-483f-b237-9980852df619"
+Path: /sitecore/content/abc/Heart/Data/Accordions
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261028T135155Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "47473547-3e3f-4397-aa59-3a3e8677439f"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261028T135155Z

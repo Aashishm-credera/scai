@@ -1,0 +1,116 @@
+services:
+  # A Windows-based nodejs base image
+  nodejs:
+    image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-nodejs:${VERSION:-latest}
+    build:
+      context: ./docker/build/nodejs
+      args:
+        PARENT_IMAGE: ${NODEJS_PARENT_IMAGE}
+        NODEJS_VERSION: ${NODEJS_VERSION}
+    deploy:
+      replicas: 0
+
+  rendering-nextjs:
+    image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-rendering-nextjs:${VERSION:-latest}
+    build:
+      context: ./docker/build/rendering-nextjs
+      target: ${BUILD_CONFIGURATION}
+      args:
+        PARENT_IMAGE: ${REGISTRY}${COMPOSE_PROJECT_NAME}-nodejs:${VERSION:-latest}
+    volumes:
+      - ../headapps/abc-sites:C:\app
+    environment:
+      # Use CM's public host name (a network alias on cm) so edit-mode media URLs, which CM builds
+      # from the request Host header, are reachable from the browser in Pages.
+      SITECORE_API_HOST: "http://${CM_HOST}"
+      NEXT_PUBLIC_SITECORE_API_HOST: "http://${CM_HOST}"
+      SITECORE_INTERNAL_EDITING_HOST_URL: "http://localhost:3000"
+      # Container serves plain HTTP behind Traefik; the editing render self-fetch must not be redirected to HTTPS.
+      DISABLE_HTTPS_REDIRECT: "true"
+      NEXTJS_DIST_DIR: ".next-container"
+      PUBLIC_URL: "https://${RENDERING_HOST_NEXTJS}"
+      SITECORE_EDITING_SECRET: ${SITECORE_EDITING_SECRET}
+      SITECORE_API_KEY: "${SITECORE_API_KEY_APP_STARTER}"
+      DISABLE_SSG_FETCH: ${DISABLE_SSG_FETCH}
+    depends_on:
+      - cm
+      - nodejs
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.rendering-secure-nextjs.entrypoints=websecure"
+      - "traefik.http.routers.rendering-secure-nextjs.rule=Host(`${RENDERING_HOST_NEXTJS}`)"
+      - "traefik.http.routers.rendering-secure-nextjs.tls=true"
+      - "traefik.http.services.rendering-nextjs.loadbalancer.server.port=3000"
+
+  # Mount the Traefik configuration and certs.
+  traefik:
+    # Plain HTTP entrypoint for CM: edit-mode media URLs are http://${CM_HOST}/... and browsers treat
+    # *.localhost as secure, so they request them over port 80 without upgrading to HTTPS.
+    command:
+      - "--ping"
+      - "--api.insecure=true"
+      - "--providers.docker.endpoint=npipe:////./pipe/docker_engine"
+      - "--providers.docker.exposedByDefault=false"
+      - "--providers.file.directory=C:/etc/traefik/config/dynamic"
+      - "--entryPoints.web.address=:80"
+      - "--entryPoints.websecure.address=:443"
+      - "--entryPoints.websecure.forwardedHeaders.insecure"
+    ports:
+      - "80:80"
+    volumes:
+      - ./docker/traefik:C:/etc/traefik
+    depends_on:
+      - rendering-nextjs
+
+  # Mount our SQL data folder and use our custom image with the Headless Services (JSS)
+  # module data added. See Dockerfile for details.
+  mssql:
+    volumes:
+      - type: bind
+        source: .\docker\data\sql
+        target: c:\data
+
+  # Mount our Solr data folder and use our retagged Solr image.
+  # Some modules (like SXA) also require additions to the Solr image.
+  solr:
+    volumes:
+      - type: bind
+        source: .\docker\data\solr
+        target: c:\data
+
+  # Use our custom CM image with added modules and solution code.
+  # Folders are mounted below for code deployment and log output. See Dockerfile for details.
+  # Configure for a mounted license file instead of using SITECORE_LICENSE.
+  cm:
+    networks:
+      default:
+        aliases:
+          - ${CM_HOST}
+    image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-xmcloud-cm:${VERSION:-latest}
+    build:
+      context: ./docker/build/cm
+      args:
+        PARENT_IMAGE: ${SITECORE_DOCKER_REGISTRY}sitecore-xmcloud-cm:${SITECORE_VERSION}
+        TOOLS_IMAGE: ${TOOLS_IMAGE}:${SITECORE_VERSION}
+    volumes:
+      - ${LOCAL_DEPLOY_PATH}\platform:C:\deploy
+      - ${LOCAL_DATA_PATH}\cm:C:\inetpub\wwwroot\App_Data\logs
+      - ${HOST_LICENSE_FOLDER}:c:\license
+    environment:
+      SITECORE_LICENSE_LOCATION: c:\license\license.xml
+      RENDERING_HOST_INTERNAL_URI: "http://rendering-nextjs:3000"
+      SITECORE_JSS_EDITING_SECRET: ${SITECORE_EDITING_SECRET}
+      SITECORE_EDITING_HOST_PUBLIC_HOST: "${RENDERING_HOST_NEXTJS}"
+      SITECORE_GraphQL_CORS: ${SITECORE_GRAPHQL_CORS}
+      SITECORE_Pages_Client_Host: ${SITECORE_Pages_Client_Host}
+      SITECORE_Pages_CORS_Allowed_Origins: ${SITECORE_Pages_CORS_Allowed_Origins}
+      # Media URLs in published layout use the browser-reachable CM host instead of the request host.
+      Sitecore_Media_MediaLinkServerUrl: "https://${CM_HOST}"
+      ## Development Environment Optimizations
+      SITECORE_DEVELOPMENT_PATCHES: DevEnvOn,CustomErrorsOff,DebugOn,DiagnosticsOff,InitMessagesOff
+      Sitecore_AppSettings_exmEnabled:define: "no" # remove to turn on EXM
+    entrypoint: powershell -Command "& C:/tools/entrypoints/iis/XmCloudDevelopment.ps1"
+    labels:
+      - "traefik.http.routers.cm-web.entrypoints=web"
+      - "traefik.http.routers.cm-web.rule=Host(`${CM_HOST}`)"
+      - "traefik.http.routers.cm-web.service=cm"

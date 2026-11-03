@@ -1,0 +1,105 @@
+﻿---
+ID: "32aa888a-1044-404d-92d2-42c3d6f3e5e4"
+Parent: "bd0eb4b9-78f9-4f9e-8052-24ab30d6a582"
+Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
+Path: /sitecore/layout/Renderings/Feature/abc/Navigation/Breadcrumb
+SharedFields:
+- ID: "037fe404-dd19-4bf7-8e30-4dadf68b27b0"
+  Hint: componentName
+  Value: Breadcrumb
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: SXA/16x16/breadcrumb.png
+- ID: "17bb046a-a32a-41b3-8315-81217947611b"
+  Hint: ComponentQuery
+  Value: |
+    query Breadcrumb($contextItem: String!, $language: String!) {
+      item(path: $contextItem, language: $language) {
+        id
+        name
+    
+        PageTitle: field(name: "PageTitle") {
+          ... on TextField {
+            value
+          }
+        }
+    
+        NavigationTitle: field(name: "NavigationTitle") {
+          ... on TextField {
+            value
+          }
+        }
+    
+        url {
+          path
+        }
+    
+        IsExcludedFromBreadcrumb: field(name: "ExcludeFromBreadcrumb") {
+          ... on CheckboxField {
+            value: boolValue
+          }
+        }
+    
+        ancestors(hasLayout: true) {
+          id
+          name
+    
+          PageTitle: field(name: "PageTitle") {
+            ... on TextField {
+              value
+            }
+          }
+    
+          NavigationTitle: field(name: "NavigationTitle") {
+            ... on TextField {
+              value
+            }
+          }
+    
+          url {
+            path
+          }
+    
+          IsExcludedFromBreadcrumb: field(name: "ExcludeFromBreadcrumb") {
+            ... on CheckboxField {
+              value: boolValue
+            }
+          }
+        }
+      }
+    }
+- ID: "b4bbc0be-7619-4678-b2f7-947d84aa77a9"
+  Hint: Content Dependencies
+  Value: |
+    {CF1FF438-35EF-4C9D-A365-CFD60A794DCB}
+    {E548CD8C-BCF7-46F6-A576-B1DCFAD66062}
+    {07BB8ABE-7A1D-4AF2-B7D6-BF5140AAAF21}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "e07aadce-9512-4ba0-a25d-e3316ccf3df9"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261013T131846Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "7c27be14-b0fa-4157-bf63-d1cb92a89f51"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261013T133046Z

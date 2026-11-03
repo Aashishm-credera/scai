@@ -1,0 +1,23 @@
+﻿---
+ID: "7f94654b-753e-4b4e-8cf7-2e8e1af51265"
+Parent: "1b7b7c23-5a13-4664-b42d-176b23d19c18"
+Template: "1b7b7c23-5a13-4664-b42d-176b23d19c18"
+Path: /sitecore/templates/Project/abc/Heart/Pages/Server Error Page/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261009T100855Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "20d81f88-f8fd-492f-91ca-91e1e29f2675"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261009T101137Z

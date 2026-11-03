@@ -1,0 +1,61 @@
+name: '$(Build.Reason) triggered Sitecore deploy from $(Build.SourceBranchName)'
+
+trigger:
+  branches:
+    include:
+    - 'main'
+    - 'develop'
+    - 'release/*'
+  paths:
+    exclude:
+    - '*.md'          #Exclude changes to mark up documents such as readme.md
+    - '*.ps1'         #Exclude changes to any powershell script files
+    - '.pipelines/*'  #Exclude changes to pipeline yaml scripts
+
+extends:
+  template: templates/arc-sitecore-release.yml
+  parameters:
+    AzureServiceConnection: "scon-sitecoreai-nonprod"
+    # Environments - Add/update/remove environments as required. 
+    Environments:
+
+      - env: DEV
+        # The deployRestriction property is used to control which branches can deploy to the environment. 
+        deployRestriction: ${{ eq(variables['Build.SourceBranch'], 'refs/heads/develop') }}
+        # The platformFile is used to specify the platform configuration for the environment.
+        platformFile: variables/platform/sitecore-app.dev.json
+        # and appFile is used to specify the application variables used for the build.
+        appFile: variables/application/sitecore-app.dev.json
+
+      - env: TEST
+        # The deployRestriction property is used to control which branches can deploy to the environment. 
+        deployRestriction: ${{ eq(variables['Build.SourceBranch'], 'refs/heads/develop') }}
+        # The platformFile is used to specify the platform configuration for the environment.
+        platformFile: variables/platform/sitecore-app.test.json
+        # and appFile is used to specify the application variables used for the build.
+        appFile: variables/application/sitecore-app.test.json
+
+      - env: UAT
+        # The deployRestriction property is used to control which branches can deploy to the environment. 
+        deployRestriction: ${{ eq(variables['Build.SourceBranch'], 'refs/heads/develop') }}
+        # The platformFile is used to specify the platform configuration for the environment.
+        platformFile: variables/platform/sitecore-app.uat.json
+        # and appFile is used to specify the application variables used for the build.
+        appFile: variables/application/sitecore-app.uat.json
+
+      - env: Pre-Prod
+        # The deployRestriction property is used to control which branches can deploy to the environment.
+        deployRestriction: ${{ eq(variables['Build.SourceBranch'], 'refs/heads/develop') }}
+        # The platformFile is used to specify the platform configuration for the environment.
+        platformFile: variables/platform/sitecore-app.preprod.json
+        # and appFile is used to specify the application variables used for the build.
+        appFile: variables/application/sitecore-app.preprod.json
+
+      - env: Production
+        # The deployRestriction property is used to control which branches can deploy to the environment.
+        deployRestriction: ${{ or(startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'), startsWith(variables['Build.SourceBranch'], 'refs/heads/hotfix'), eq(variables['Build.SourceBranch'], 'refs/heads/develop')) }}
+        # The platformFile is used to specify the platform configuration for the environment.
+        platformFile: variables/platform/sitecore-app.production.json
+        # and appFile is used to specify the application variables used for the build.
+        appFile: variables/application/sitecore-app.production.json
+        azureServiceConnection: "scon-sitecoreai-prod"

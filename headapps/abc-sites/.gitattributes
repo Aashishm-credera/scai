@@ -1,0 +1,7 @@
+# Line endings for this repository
+# See: https://help.github.com/en/articles/configuring-git-to-handle-line-endings
+# This must line up with `endOfLine: "lf"` in .prettierrc.json. Checking files out as CRLF made
+# `npm run format:check` flag every .ts/.tsx/.js file on any machine, the Linux CI agent included.
+
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto eol=lf

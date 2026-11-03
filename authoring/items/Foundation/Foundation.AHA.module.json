@@ -1,0 +1,44 @@
+{
+  "$schema": "../../../.sitecore/schemas/ModuleFile.schema.json",
+  "namespace": "Foundation.abc",
+  "items": {
+    "includes": [
+      {
+        "name": "templates",
+        "path": "/sitecore/templates/Foundation/abc",
+        "scope": "ItemAndDescendants",
+        "allowedPushOperations": "CreateUpdateAndDelete"
+      },
+      {
+        "name": "validation-field-rules",
+        "path": "/sitecore/system/Settings/Validation Rules/Field Rules/abc",
+        "scope": "ItemAndDescendants",
+        "allowedPushOperations": "CreateUpdateAndDelete"
+      },
+      {
+        "name": "page-builder-device",
+        "path": "/sitecore/system/Settings/Foundation/Experience Accelerator/Horizon/Devices",
+        "scope": "ItemAndDescendants",
+        "allowedPushOperations": "CreateAndUpdate"
+      },
+      {
+        "name": "rendering-host-local",
+        "path": "/sitecore/system/Settings/Services/Rendering Hosts/Local",
+        "scope": "SingleItem",
+        "allowedPushOperations": "CreateAndUpdate"
+      },
+      {
+        "name": "settings",
+        "path": "/sitecore/system/Settings/Foundation/abc",
+        "scope": "ItemAndDescendants",
+        "allowedPushOperations": "CreateUpdateAndDelete"
+      },
+      {
+        "name": "languages",
+        "path": "/sitecore/system/Languages",
+        "scope": "ItemAndDescendants",
+        "allowedPushOperations": "CreateUpdateAndDelete"
+      }
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "$schema": "../../../../../.sitecore/schemas/ModuleFile.schema.json",
+  "namespace": "Project.abc.Heart",
+  "references": ["Project.abc", "Foundation.abc", "Feature.abc"],
+  "items": {
+    "includes": [
+      {
+        "name": "media-folders",
+        "path": "/sitecore/Media Library/Project/abc/Heart",
+        "scope": "SingleItem",
+        "allowedPushOperations": "CreateOnly"
+      },
+      {
+        "name": "sites",
+        "path": "/sitecore/content/abc/Heart",
+        "rules": [
+          {
+            "path": "/Home/404",
+            "scope": "SingleItem",
+            "allowedPushOperations": "CreateOnly"
+          },
+          {
+            "path": "/Home/Server Error",
+            "scope": "SingleItem",
+            "allowedPushOperations": "CreateOnly"
+          },
+          {
+            "path": "/Home",
+            "scope": "SingleItem",
+            "allowedPushOperations": "CreateOnly"
+          },
+          {
+            "path": "/Media",
+            "scope": "SingleItem",
+            "allowedPushOperations": "CreateAndUpdate"
+          },
+          {
+            "path": "/Data/Labels",
+            "scope": "ItemAndDescendants",
+            "allowedPushOperations": "CreateOnly"
+          },
+          {
+            "path": "/Data/Label Colors",
+            "scope": "ItemAndDescendants",
+            "allowedPushOperations": "CreateOnly"
+          },
+          {
+            "path": "/Data/Guide Status Tags",
+            "scope": "ItemAndDescendants",
+            "allowedPushOperations": "CreateOnly"
+          },
+          {
+            "path": "/Data",
+            "scope": "ItemAndChildren",
+            "allowedPushOperations": "CreateAndUpdate"
+          },
+          {
+            "path": "/Dictionary",
+            "scope": "ItemAndDescendants",
+            "allowedPushOperations": "CreateOnly"
+          },
+          {
+            "path": "/Presentation",
+            "scope": "ItemAndDescendants",
+            "allowedPushOperations": "CreateUpdateAndDelete"
+          },
+          {
+            "path": "/Settings/Site Grouping",
+            "scope": "ItemAndDescendants",
+            "allowedPushOperations": "CreateOnly"
+          },
+          {
+            "path": "/Settings/Site Metadata Settings",
+            "scope": "SingleItem",
+            "allowedPushOperations": "CreateOnly"
+          },
+          {
+            "path": "/Settings",
+            "scope": "ItemAndChildren",
+            "allowedPushOperations": "CreateAndUpdate"
+          },
+          {
+            "path": "/Icons",
+            "scope": "SingleItem",
+            "allowedPushOperations": "CreateAndUpdate"
+          },
+          {
+            "path": "*",
+            "scope": "Ignored"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "../../../../.sitecore/schemas/ModuleFile.schema.json",
+  "namespace": "Project.abc",
+  "references": ["Foundation.abc", "Feature.abc"],
+  "items": {
+    "includes": [
+      {
+        "name": "module",
+        "path": "/sitecore/system/settings/Project/abc",
+        "allowedPushOperations": "CreateUpdateAndDelete"
+      },
+      {
+        "name": "templates",
+        "path": "/sitecore/templates/Project/abc",
+        "allowedPushOperations": "CreateUpdateAndDelete"
+      },
+      {
+        "name": "branches",
+        "path": "/sitecore/templates/Branches/Project/abc",
+        "allowedPushOperations": "CreateUpdateAndDelete"
+      },
+      {
+        "name": "media-folders",
+        "path": "/sitecore/Media Library/Project/abc",
+        "rules": [
+          {
+            "path": "/shared",
+            "scope": "SingleItem",
+            "allowedPushOperations": "CreateOnly"
+          },
+          {
+            "path": "*",
+            "scope": "Ignored"
+          }
+        ]
+      },
+      {
+        "name": "renderings",
+        "path": "/sitecore/Layout/Renderings/Project/abc",
+        "scope": "ItemAndDescendants",
+        "allowedPushOperations": "CreateUpdateAndDelete"
+      },
+      {
+        "name": "placeholder-settings",
+        "path": "/sitecore/Layout/Placeholder Settings/Project/abc",
+        "scope": "ItemAndDescendants",
+        "allowedPushOperations": "CreateUpdateAndDelete"
+      },
+      {
+        "name": "root",
+        "path": "/sitecore/content/abc",
+        "scope": "SingleItem",
+        "allowedPushOperations": "CreateAndUpdate"
+      },
+      {
+        "name": "grid-tailwind",
+        "path": "/sitecore/system/Settings/Feature/Experience Accelerator/GridTailwind/Tailwind Grid Definition",
+        "scope": "ItemAndChildren",
+        "allowedPushOperations": "CreateAndUpdate"
+      }
+    ]
+  }
+}

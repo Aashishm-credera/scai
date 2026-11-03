@@ -1,0 +1,23 @@
+﻿---
+ID: "a29a860f-3d94-4f98-91c5-f6a40d94d637"
+Parent: "6b77adb4-d289-42f1-b382-fc1f4d1dc292"
+Template: "3b7b4c09-d242-4d0f-aaca-9e8e30604b0f"
+Path: /sitecore/content/abc/Heart/Icons
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261012T104736Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "bfb5f045-f559-444b-af4b-1b6c9d8b6d31"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261012T104736Z

@@ -1,0 +1,12 @@
+[
+  {
+    "name": "EnvironmentName",
+    "value": "PREPROD",
+    "target": "CM"
+  },
+  {
+    "name": "LOG_LEVEL_VALUE",
+    "value": "INFO",
+    "target": "CM"
+  }
+]

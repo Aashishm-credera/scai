@@ -1,0 +1,77 @@
+﻿---
+ID: "ba325f39-a19b-4693-930e-44d07dc0cb2b"
+Parent: "7e374ea6-1c2b-43c3-9096-5482f352a049"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Feature/abc/Navigation/Base Button/Base Button/Base Button/Link
+SharedFields:
+- ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
+  Hint: Source
+  Value: "query:$linkableHomes"
+- ID: "21828437-ea4b-40a1-8c61-4ce60ea41db6"
+  Hint: Validate Button
+  Value: |
+    {B43CB006-AAFB-4A3F-B0D6-7AA9D2D992EF}
+    {B5FC6807-DC07-424E-B241-046DE65A64A2}
+- ID: "337e20e1-999a-4eea-85ad-b58a03ae75cc"
+  Hint: Quick Action Bar
+  Value: |
+    {B43CB006-AAFB-4A3F-B0D6-7AA9D2D992EF}
+    {B5FC6807-DC07-424E-B241-046DE65A64A2}
+    {93F8BCDE-9C26-4C98-9CB9-821F3EC46529}
+- ID: "53c432c4-7122-4e2d-8296-db4184fd1735"
+  Hint: Workflow
+  Value: |
+    {B43CB006-AAFB-4A3F-B0D6-7AA9D2D992EF}
+    {B5FC6807-DC07-424E-B241-046DE65A64A2}
+    {93F8BCDE-9C26-4C98-9CB9-821F3EC46529}
+- ID: "9c903e29-650d-4af2-b9bd-526d5c14a1a5"
+  Hint: Validator Bar
+  Value: |
+    {B43CB006-AAFB-4A3F-B0D6-7AA9D2D992EF}
+    {B5FC6807-DC07-424E-B241-046DE65A64A2}
+    {93F8BCDE-9C26-4C98-9CB9-821F3EC46529}
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: General Link
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "64a7809c-d30f-475d-9c6a-ee1d75a910fb"
+Languages:
+- Language: en
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "d5dbe866-7a76-4882-b22f-f36a8f71904d"
+  - ID: "577f1689-7de4-4ad2-a15f-7fdc1759285f"
+    Hint: __Long description
+    Value: "Sets where the button goes and the text shown on it. The Link Text is used as the button label, so keep it short and action-led, for example Donate now. Both a destination and Link Text are needed: if either is missing, the button is not shown on the published page."
+  - ID: "9541e67d-ce8c-4225-803d-33f7f29f09ef"
+    Hint: __Short description
+    Value: Required. The button destination and label.
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261012T101142Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "cab51dc4-99a7-4c0d-93ab-f7f429de4f60"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T140325Z

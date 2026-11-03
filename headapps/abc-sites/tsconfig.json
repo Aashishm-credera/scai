@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@design-tokens/*": ["./design-tokens/*"],
+      "#mocks/*": ["./.storybook/mocks/*"],
+      "src/*": ["./src/*"],
+      "sitecore.config": ["./sitecore.config"],
+      "components/*": ["./src/components/*"],
+      "lib/*": ["./src/lib/*"],
+      "temp/*": ["./src/temp/*"],
+      "assets/*": ["./src/assets/*"],
+      ".sitecore/*": ["./.sitecore/*"]
+    },
+    "target": "ES2017",
+    "types": ["node"],
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "strictFunctionTypes": false,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    ".next-container/types/**/*.ts",
+    ".next-container/dev/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}

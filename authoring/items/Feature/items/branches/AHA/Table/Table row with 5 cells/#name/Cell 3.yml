@@ -1,0 +1,23 @@
+﻿---
+ID: "b0d18861-6d59-4290-b3d8-5703051a9c03"
+Parent: "51184ab3-68a4-4115-aa56-14d8ec190275"
+Template: "5ed597e3-3cf6-4376-a8bd-0d2d84df282c"
+Path: /sitecore/templates/Branches/Feature/abc/Table/Table row with 5 cells/$name/Cell 3
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261027T121556Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6d3869da-8926-4344-aafc-6efbcda63987"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T121556Z

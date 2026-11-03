@@ -1,0 +1,87 @@
+﻿---
+ID: "e311a544-a45e-452f-b8b7-f57e8e067289"
+Parent: "7c6c5aa9-378e-4ff6-99e5-3e1f61914185"
+Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
+Path: /sitecore/layout/Renderings/Feature/abc/Media/Resource Downloads
+SharedFields:
+- ID: "037fe404-dd19-4bf7-8e30-4dadf68b27b0"
+  Hint: componentName
+  Value: ResourceDownloads
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/download.png
+- ID: "17bb046a-a32a-41b3-8315-81217947611b"
+  Hint: ComponentQuery
+  Value: |
+    query ResourceDownloads($datasource: String!, $language: String!) {
+      datasource: item(path: $datasource, language: $language) {
+        Title: field(name: "Title") { jsonValue }
+        Description: field(name: "Description") { jsonValue }
+        ButtonText: field(name: "ButtonText") { jsonValue }
+        ThumbnailImage: field(name: "ThumbnailImage") { jsonValue }
+        UseDownloadIcon: field(name: "UseDownloadIcon") { jsonValue }
+        AriaLabel: field(name: "AriaLabel") { jsonValue }
+        children(includeTemplateIDs: ["{6312FB41-E1FE-4163-BDB1-01607BDFD1B4}"]) {
+          results {
+            id
+            name
+            File: field(name: "File") { jsonValue }
+            Label: field(name: "Label") { jsonValue }
+          }
+        }
+      }
+    }
+    
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
+  Hint: Datasource Template
+  Value: /sitecore/templates/Feature/abc/Media/Resource Downloads/Resource Downloads
+- ID: "a2f5d9df-8cba-4a1d-99eb-51acb94cb057"
+  Hint: Page Editor Buttons
+  Value: |
+    {587F8FBD-E38F-4E2B-8DE4-1F474D9DDD00}
+    {31A3A929-C599-4DD3-91A6-F4A9487CC8B7}
+- ID: "a77e8568-1ab3-44f1-a664-b7c37ec7810d"
+  Hint: Parameters Template
+  Value: "{C083910A-EB16-4B34-88C5-2DD20EB215DA}"
+- ID: "b4bbc0be-7619-4678-b2f7-947d84aa77a9"
+  Hint: Content Dependencies
+  Value: "{B0B5B0CD-6445-4FAE-A989-6CA9C50CC29A}"
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "query:$site/*[@@name='Data']/*[@@templatename='Resource Downloads Folder']"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "dccc53f6-2696-4fb6-822b-c777e033650e"
+- ID: "e829c217-5e94-4306-9c48-2634b094fdc2"
+  Hint: OtherProperties
+  Value: IsRenderingsWithDynamicPlaceholders=true
+Languages:
+- Language: en
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "fe85c7d4-2dc1-42c0-9641-2a06a092f694"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261015T091011Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c986282d-aaa0-4dca-8367-ab134ae6bab9"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261015T093603Z

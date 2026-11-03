@@ -1,0 +1,60 @@
+﻿---
+ID: "de9f332d-5255-4b12-8c54-a3ba0b4ce831"
+Parent: "c9328824-eea5-4951-ae7d-eafb1227cbc4"
+Template: "1349c707-5c09-489c-9901-17b0e4620d64"
+Path: /sitecore/content/abc/Heart/Presentation/Page Branches/Guide Page/$name
+SharedFields:
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "195a5c58-c5a8-4d2d-8551-bd3045fbc9c3"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Value: |
+    <r xmlns:p="p" xmlns:s="s"
+      p:p="1">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r
+          uid="{98CA1E04-FAA1-4DF7-B347-A1217B985A18}"
+          p:before="*"
+          s:ds="local:/Data/Guide Hero"
+          s:id="{8B936536-6D15-45A2-92C2-15BA8F00FAE6}"
+          s:par="FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=1&amp;Include in schema"
+          s:ph="/headless-main/sxa-main-with-sidebar/abc-page-hero-1" />
+        <r
+          uid="{0E1CF2D3-B3FD-4796-90A0-8B4386EE2244}"
+          p:after="r[@uid='{98CA1E04-FAA1-4DF7-B347-A1217B985A18}']"
+          s:ds="local:/Data/Overview"
+          s:id="{526723CB-8A0A-452D-8097-CDF632DF9CF3}"
+          s:par="FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=2&amp;Include in schema"
+          s:ph="/headless-main/sxa-main-with-sidebar/abc-page-main-content-2/page-content-container-4/in-page-sidebar-navigation-5" />
+        <r
+          uid="{521C34B0-4640-4364-B783-9A99981CCDB3}"
+          p:after="*[1=2]"
+          s:ds="local:/Data/Testing and Diagnosis"
+          s:id="{526723CB-8A0A-452D-8097-CDF632DF9CF3}"
+          s:par="FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=3&amp;Include in schema"
+          s:ph="/headless-main/sxa-main-with-sidebar/abc-page-main-content-2/page-content-container-4/in-page-sidebar-navigation-5" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261027T092140Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "dc68fbf9-0d18-4fad-8a80-b3c10701ff29"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261030T113210Z

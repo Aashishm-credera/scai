@@ -1,0 +1,115 @@
+.resource-downloads {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-width: min(100%, var(--abc-size-layout-320));
+  gap: var(--abc-spacing-gap-4xl);
+  padding: var(--abc-spacing-inset-xl);
+  border: 1px solid var(--abc-border-default-secondary);
+  border-radius: var(--abc-radius-2xl);
+  background: var(--abc-surface-default-primary);
+  transition: background-color var(--abc-transition-control-duration)
+    var(--abc-transition-control-easing);
+}
+
+.resource-downloads-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: stretch;
+  min-width: 0;
+  gap: var(--abc-spacing-inset-4xl);
+}
+
+.resource-downloads-wrapper {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  min-width: 0;
+  gap: var(--abc-spacing-inset-xl);
+}
+
+.resource-downloads-artwork {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.resource-downloads-image {
+  width: var(--abc-space-72);
+  height: var(--abc-space-72);
+  object-fit: contain;
+}
+
+.resource-downloads-text {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+  gap: var(--abc-spacing-inset-xs);
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
+}
+
+.resource-downloads-title,
+.resource-downloads-description {
+  align-self: stretch;
+  margin: 0;
+  font-style: normal;
+}
+
+.resource-downloads-title {
+  color: var(--abc-text-default-tertiary);
+  font-family: var(--abc-text-heading-xs-family);
+  font-size: var(--abc-text-heading-xs-size);
+  font-weight: var(--abc-text-heading-xs-weight);
+  line-height: var(--abc-text-heading-xs-line);
+}
+
+.resource-downloads-description {
+  color: var(--abc-text-default-secondary);
+  font-family: var(--abc-text-body-sm-family);
+  font-size: var(--abc-text-body-sm-size);
+  font-weight: var(--abc-text-body-sm-weight);
+  line-height: var(--abc-text-body-sm-line);
+}
+
+.resource-downloads-action,
+.resource-downloads-action .link-dropdown {
+  max-width: 100%;
+}
+
+.resource-downloads .resource-downloads-cta {
+  border: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  flex-shrink: 0;
+}
+
+.resource-downloads-action,
+.resource-downloads-action .link-dropdown,
+.resource-downloads .resource-downloads-cta {
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: unset;
+  }
+}
+
+.resource-downloads .resource-downloads-cta {
+  justify-content: center;
+}
+/* md is the application's token breakpoint (480px), rather than the reference frame width. */
+@media (min-width: 480px) {
+  .resource-downloads-content {
+    flex-direction: row;
+    align-items: center;
+  }
+}

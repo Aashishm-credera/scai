@@ -1,0 +1,201 @@
+parameters:
+  # Azure DevOps service connection to use for the deployment. This is used to authenticate with Azure and deploy the application.
+  - name: AzureServiceConnection
+    type: string
+  # Path to the solution to build and deploy. This is used to locate the solution file for the build and deploy tasks.
+  - name: ApplicationRoot
+    type: string
+  # Environment configuration to allow this pipeline to deploy to multiple environments. Each environment can have its own platform file, build variables and variable group.
+  - name: Environments
+    type: object
+  # Optional verification build stage to perform a build of the application before deploying to any environments. This can be used to ensure that the application builds successfully before deploying to any environments.
+  - name: VerificationBuild
+    type: object
+    default: 
+      - platformFile: ''
+        buildVars: ''
+        variableGroup: ''
+  # Optional self hosted agent pool to use for the deployment. This can be used to specify a specific agent pool to use for the deployment.
+  - name: SelfHostedPool
+    type: string
+    default: ''
+
+variables:
+  # Force deployment for manual change
+  - name: ForceDeploy
+    value: $[ eq(variables['Build.Reason'], 'Manual') ]
+
+stages:
+
+# Optional Verification Build Stage
+- ${{ if ne(parameters.VerificationBuild.platformFile, '') }}:
+  - stage: Verification_Build
+    displayName: "Verification Build"
+    jobs:
+      # ── Build & Deploy Head (HeadApp) ─────────────────────────
+      - job: Build_Head
+        displayName: "Build"
+        variables:
+          # Optional usage variable groups for secure environment variables during build. Key Vault will be used if configured
+          - ${{ if ne(parameters.VerificationBuild.variableGroup, '') }}:
+            - group: ${{ parameters.VerificationBuild.variableGroup }}
+        timeoutInMinutes: 20
+        pool:
+          # Optional usage of self hosted agents.
+          ${{ if ne(parameters.SelfHostedPool, '') }}:
+            name: ${{ parameters.SelfHostedPool }}
+          ${{ else }}:
+            vmImage: ubuntu-latest
+        steps:
+
+          - checkout: self
+            path: 'code'
+
+          - task: DWHeadlessApp@1
+            displayName: "Build"
+            name: Build
+            inputs:
+              # Extension action to perform
+              Action: build
+              ${{ if ne(parameters.VerificationBuild.azureSubscription, '') }}:
+                # Overridable azure subscription if environments require a different subscription to deploy to. i.e. production is in a different subscription to dev/test environments.
+                AzureSubscription: ${{ parameters.VerificationBuild.azureSubscription }}
+              # Path to the solution to build and deploy
+              SolutionPath: $(Agent.BuildDirectory)/code/${{ parameters.ApplicationRoot }}
+              EnvironmentName: 'Verification'
+              # Used for additional build information, i.e. node.js version.
+              PlatformFile: $(Agent.BuildDirectory)/code/.pipelines/${{ parameters.VerificationBuild.platformFile }}
+              # Environment application file stores the build time environment variables
+              AppFile: $(Agent.BuildDirectory)/code/.pipelines/${{ parameters.VerificationBuild.appFile }}
+              # Add any additional build environment variables for this environment if specified in the parameters
+              ${{ if ne(parameters.VerificationBuild.buildVars, '') }}:
+                BuildEnvs: |
+                  ${{ parameters.VerificationBuild.buildVars }}
+
+# ══════════════════════════════════════════════════════════════
+# Optional Tasks, Jobs and/or Stages can be added here to perform additional tasks, e.g. run tests, perform security scans, etc.
+# ══════════════════════════════════════════════════════════════
+
+- ${{ each environment in parameters.Environments }}:
+
+  # Restrict the environment deployment to only be allowed if the deployRestriction condition is true. i.e. only deploy DEV from the develop branch
+  - ${{ if eq(environment.deployRestriction, true) }}:
+
+    # ══════════════════════════════════════════════════════════════
+    # Stage: Build and Deploy
+    # ══════════════════════════════════════════════════════════════
+    - stage: Build_And_Deploy_${{ replace(environment.env, '-', '_') }}
+      displayName: "${{ replace(environment.env, '-', '_') }} - Build & Deploy Head"
+      dependsOn: 
+        # If we have a verification build then all environment deployments will depend on it.
+        - ${{ if ne(parameters.VerificationBuild.platformFile, '') }}:
+          - Verification_Build
+        # Environment deployments can depend on another environment being deployed first, e.g. Production can depend on UAT being deployed successfully first.
+        - ${{ if ne(environment.dependentEnvironment, '') }}:
+          - GoLive_${{ replace(environment.dependentEnvironment, '-', '_') }}
+      jobs:
+        # ── Build & Deploy Head (HeadApp) ─────────────────────────
+        - deployment: BuildDeployHead
+          displayName: "Build & Deploy Head"
+          # Azure DevOps environment is used to provide a manual approval gate for the Go Live stage. The environment name is set in the pipeline variables.
+          environment: ${{ environment.env }}
+          variables:
+            # Optional usage variable groups for secure environment variables during build. Key Vault will be used if configured
+            - ${{ if ne(environment.variableGroup, '') }}:
+              - group: ${{ environment.variableGroup }}
+          timeoutInMinutes: 120
+          pool:
+            # Optional usage of self hosted agents.
+            ${{ if ne(parameters.SelfHostedPool, '') }}:
+              name: ${{ parameters.SelfHostedPool }}
+            ${{ else }}:
+              vmImage: ubuntu-latest
+          strategy:
+            runOnce:
+              deploy:
+                steps:
+
+                  # Fetch all to perform change detection diffs against previous release to determine if release is required.
+                  - checkout: self
+                    path: 'code'
+                    fetchDepth: 0
+                    persistCredentials: true
+
+                  - task: DWHeadlessApp@1
+                    displayName: "Arc: Build & Deploy"
+                    name: BuildDeploy
+                    inputs:
+                      # Extension action to perform
+                      Action: build-deploy
+                      ${{ if ne(environment.azureServiceConnection, '') }}:
+                        # Overridable azure subscription if environments require a different subscription to deploy to. i.e. production is in a different subscription to dev/test environments.
+                        AzureSubscription: ${{ environment.azureServiceConnection }}
+                      ${{ else }}:
+                        # If this environment is not dependent on another environment being deployed first, then we can use the current build's artifacts to perform a change detection diff.
+                        AzureSubscription: ${{ parameters.AzureServiceConnection }}
+                      # Path to the solution to build and deploy
+                      SolutionPath: $(Agent.BuildDirectory)/code/${{ parameters.ApplicationRoot }}
+                      EnvironmentName: ${{ environment.env }}
+                      # Environment platform file to used to interpret where to deploy the code
+                      PlatformFile: $(Agent.BuildDirectory)/code/.pipelines/${{ environment.platformFile }}
+                      # Environment application file stores the build time environment variables
+                      AppFile: $(Agent.BuildDirectory)/code/.pipelines/${{ environment.appFile }}
+                      # Manual queue → force build + deploy regardless of change detection.
+                      ForceDeploy: $(ForceDeploy)
+                      # Add any additional build environment variables for this environment if specified in the parameters
+                      ${{ if ne(parameters.environment.buildVars, '') }}:
+                        BuildEnvs: |
+                          ${{ parameters.environment.buildVars }}
+
+                  # Publish build artifacts for downstream stages
+                  - task: PublishPipelineArtifact@1
+                    displayName: Publish Build Artifacts
+                    inputs:
+                      targetPath: $(BuildDeploy.ArtifactsRoot)
+                      artifactName: edge-builds_${{ replace(environment.env, '-', '_') }}
+                      publishLocation: pipeline
+
+    # ══════════════════════════════════════════════════════════════
+    # Stage: Go Live (single environment, single region, with approval gate)
+    # ══════════════════════════════════════════════════════════════
+    - stage: GoLive_${{ replace(environment.env, '-', '_') }}
+      displayName: "${{ replace(environment.env, '-', '_') }} Go Live"
+      dependsOn: Build_And_Deploy_${{ replace(environment.env, '-', '_') }}
+      # Check that the build stage succeeded and that a build was performed (i.e. not skipped due to no changes)
+      condition: and(succeeded(), eq(dependencies.Build_And_Deploy_${{ replace(environment.env, '-', '_') }}.outputs['BuildDeployHead.BuildDeployHead.BuildDeploy.BuildPerformed'], 'true'))
+      jobs:
+        - deployment: SwapSlotsAndGoLive
+          displayName: "Swap Slots and Go Live"
+          # Azure DevOps environment is used to provide a manual approval gate for the Go Live stage. The environment name is set in the pipeline variables.
+          environment: ${{ environment.env }}
+          variables:
+            # Optional usage variable groups for secure environment variables during build. Key Vault will be used if configured
+            - ${{ if ne(environment.variableGroup, '') }}:
+              - group: ${{ environment.variableGroup }}
+          pool:
+            # Optional usage of self hosted agents.
+            ${{ if ne(parameters.SelfHostedPool, '') }}:
+              name: ${{ parameters.SelfHostedPool }}
+            ${{ else }}:
+              vmImage: ubuntu-latest
+          strategy:
+            runOnce:
+              deploy:
+                steps:
+                  # Checkout the code to a repeatable location to ensure we know where it is.
+                  - checkout: self
+                    path: 'code'
+
+                  - task: DWHeadlessApp@1
+                    displayName: "Arc: Go Live"
+                    inputs:
+                      # Extension action to perform
+                      Action: go-live
+                      ${{ if ne(environment.azureServiceConnection, '') }}:
+                        # Overridable azure subscription if environments require a different subscription to deploy to. i.e. production is in a different subscription to dev/test environments.
+                        AzureSubscription: ${{ environment.azureServiceConnection }}
+                      ${{ else }}:
+                        # If this environment is not dependent on another environment being deployed first, then we can use the current build's artifacts to perform a change detection diff.
+                        AzureSubscription: ${{ parameters.AzureServiceConnection }}
+                      # Environment platform file to used to interpret what to push live
+                      PlatformFile: $(Agent.BuildDirectory)/code/.pipelines/${{ environment.platformFile }}

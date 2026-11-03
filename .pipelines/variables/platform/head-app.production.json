@@ -1,0 +1,45 @@
+{
+  "regions": [
+    {
+      "name": "primary",
+      "resourceGroup": "abc-prd-aoecxzo",
+      "appServiceName": "abc-prd-aoecxzo-app-website",
+      "slotName": "s01"
+    },
+    {
+      "name": "secondary",
+      "resourceGroup": "abc-prd-boecxzo",
+      "appServiceName": "abc-prd-boecxzo-app-website",
+      "slotName": "s01"
+    }
+  ],
+  "healthcheckEndpoint": "/api/dataweavers/diagnostics/ready",
+  "nodeVersion": "24.16.0",
+  "keyVaultName": "abc-prd-kv-app",
+  "infrastructureResourceGroup": "abc-prd",
+  "targetSlot": "production",
+  "changeDetection": {
+    "actions": {
+      "deploy": ["headapps/nextjs-ta/**"]
+    }
+  },
+  "healthCheck": {
+    "preSwapPaths": [ "/" ],
+    "postSwapPaths": [ "/" ]
+  },
+  "cachePurge": {
+    "enabled": true,
+    "failOnError": false,
+    "zoneId": "4b9473404854ecb191760594e94ea309",
+    "apiToken": "Secret:CloudflarePurgeToken",
+    "tags": ["abc-prd-app-cfpurge"],
+    "urls": [],
+    "hostnames": [],
+    "prefixes": []
+  },
+  "wrapper": {
+    "variant": "variant-1",
+    "patchConfig": true,
+    "includeRedisPageCache": false
+  }
+}

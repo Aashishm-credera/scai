@@ -1,0 +1,12 @@
+/* Stories render with the live site's stylesheet, so a class that works here works on the page.
+ * Theme keys, custom variants and base styles belong in src/app/globals.css, not in this file. */
+@import "../src/app/globals.css";
+
+/* Story-only layout utilities used by the Container examples. */
+.section-pad-lg {
+  padding-block: var(--abc-spacing-inset-6xl);
+}
+.theme-muted {
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+}

@@ -1,0 +1,162 @@
+﻿---
+ID: "0ad1d4b1-0f3c-4b13-84d7-00275b603671"
+Parent: "1d09af86-004d-4f04-b668-e83c61bbbb72"
+Template: "7c27ec70-f42e-4042-8a0f-abaa2f8eda18"
+Path: /sitecore/system/Settings/Foundation/Experience Accelerator/Horizon/Devices/Flexible
+SharedFields:
+- ID: "01c5c169-867f-4a45-a8a3-891a3b13b39a"
+  Hint: Width
+  Value: 0
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: sxa_grid/32x32/Flexible.png
+- ID: "654618d7-a288-44a2-bfa8-a9e1ccb4efb8"
+  Hint: Type
+  Value: "{A97B166A-D593-4CF1-83EE-F98809424245}"
+- ID: "8cbc1cdd-5f1f-4187-b3b0-d81db7ca675c"
+  Hint: StackAtBreakpoint
+  Value: xs
+- ID: "bf2f5042-9481-488d-a389-1b70a0b78ed8"
+  Hint: Icon
+  Value: |
+    <image mediaid="{9DA330B2-67D0-4688-B01A-5A1F401B78AE}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "4f7b503f-ebb4-4817-a441-6934083e8a67"
+Languages:
+- Language: da
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Fleksibel
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "4f886dd0-63dc-4a32-8765-e7fe78b9b0d2"
+      Hint: Name
+      Value: Fleksibel
+- Language: "de-DE"
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "{383844E7-4E28-4D45-AE48-640380EF63D8}"
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Flexibel
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261006T075306Z
+    - ID: "4f886dd0-63dc-4a32-8765-e7fe78b9b0d2"
+      Hint: Name
+      Value: Flexibel
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "{1EB7272F-8314-463E-A3CD-0FE6977E5E53}"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261006T075306Z
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230303T124826Z
+    - ID: "4f886dd0-63dc-4a32-8765-e7fe78b9b0d2"
+      Hint: Name
+      Value: Flexible
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8c424a96-0f39-4db8-953a-a140fc9f28a2"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261006T093759Z
+- Language: "ja-JP"
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "{383844E7-4E28-4D45-AE48-640380EF63D8}"
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: フレキシブル
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261006T075306Z
+    - ID: "4f886dd0-63dc-4a32-8765-e7fe78b9b0d2"
+      Hint: Name
+      Value: フレキシブル
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "{1EB7272F-8314-463E-A3CD-0FE6977E5E53}"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261006T075306Z
+- Language: "zh-CN"
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "{383844E7-4E28-4D45-AE48-640380EF63D8}"
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: 灵活
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261006T075306Z
+    - ID: "4f886dd0-63dc-4a32-8765-e7fe78b9b0d2"
+      Hint: Name
+      Value: 灵活
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "{1EB7272F-8314-463E-A3CD-0FE6977E5E53}"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261006T075306Z

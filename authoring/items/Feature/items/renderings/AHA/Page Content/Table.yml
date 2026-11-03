@@ -1,0 +1,103 @@
+﻿---
+ID: "943b18b9-95d6-46e3-8468-2e84aef2efb9"
+Parent: "3c56fbd7-e056-4b22-b635-885a53419e51"
+Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
+Path: /sitecore/layout/Renderings/Feature/abc/Page Content/Table
+SharedFields:
+- ID: "037fe404-dd19-4bf7-8e30-4dadf68b27b0"
+  Hint: componentName
+  Value: Table
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: /~/icon/office/32x32/table.png
+- ID: "17bb046a-a32a-41b3-8315-81217947611b"
+  Hint: ComponentQuery
+  Value: |
+    query TableRows($datasource: String!, $language: String!) {
+      datasource: item(path: $datasource, language: $language) {
+        id
+        Title: field(name: "Title"){
+          ...on TextField { jsonValue }
+        }
+        Description: field(name: "Description") {
+          ...on RichTextField { jsonValue }
+        }
+        
+        TableRows: children(includeTemplateIDs: ["{E2D7FB37-6E73-43D9-BA38-5361EB0CF96B}"]) {
+          results {
+            id
+            RowCells: children(includeTemplateIDs: ["{5ED597E3-3CF6-4376-A8BD-0D2D84DF282C}"]) {
+              results {
+                id
+                Label: field(name: "Label") {
+                  ... on LookupField {
+                    targetItem {
+                      id
+                      Text: field(name: "Text") { jsonValue }
+                      Icon: field(name: "Icon") { jsonValue }
+                      Color: field (name: "Color") { jsonValue }
+                    }
+                  }
+                }
+                Text: field(name: "Text") {
+                  ... on TextField { jsonValue }
+                }
+                LabelText: field(name: "Label Text") {
+                  ... on TextField { jsonValue }
+                }
+                LabelColor: field(name: "Label Color") { jsonValue }
+                LabelIcon: field(name: "Label Icon") { jsonValue }
+              }
+            }
+          }
+        }
+      }
+    }
+    
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
+  Hint: Datasource Template
+  Value: /sitecore/templates/Feature/abc/Page Content/Table/Table
+- ID: "a77e8568-1ab3-44f1-a664-b7c37ec7810d"
+  Hint: Parameters Template
+  Value: "{28EC9C33-1191-4EAC-9962-225B4CEB4D35}"
+- ID: "b4bbc0be-7619-4678-b2f7-947d84aa77a9"
+  Hint: Content Dependencies
+  Value: |
+    {B0B5B0CD-6445-4FAE-A989-6CA9C50CC29A}
+    {A0E6ACDE-987D-49EC-9503-85FD995DE19E}
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "query:$site/*[@@name='Data']/*[@@templatename='Table Folder']"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "1a81a504-b6ab-4ca6-a9df-1b510368422b"
+Languages:
+- Language: en
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "b22915b5-df5a-4536-be8a-18aa2a0b8b93"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261023T071218Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "89a4be42-9ada-472e-9095-e608eba4f773"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261029T123400Z

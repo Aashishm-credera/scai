@@ -1,0 +1,49 @@
+﻿---
+ID: "804748ca-9762-4098-b218-e81a57c1e157"
+Parent: "552be3d1-6860-4eb8-9012-1f2883e61454"
+Template: "8f8e2549-c77f-4860-b83b-54fa31e2befa"
+Path: "/sitecore/system/Settings/Validation Rules/Field Rules/abc/Required - Prevent Saving"
+SharedFields:
+- ID: "43a829d1-43da-465c-b772-ebaa0d515e3e"
+  Hint: Type
+  Value: Sitecore.Data.Validators.FieldValidators.RequiredFieldValidator,Sitecore.Kernel
+- ID: "8f9d8603-2e34-4c5f-b0bb-f0d91eb956ca"
+  Hint: Parameters
+  Value: Result=FatalError
+- ID: "b3607d43-e523-494e-9aff-102678d11670"
+  Hint: Use Thread
+  Value: 
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 0
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "67357104-1a70-4522-91fc-85702a71e2f0"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20061123T114059Z
+    - ID: "58014183-26fe-4568-b19f-c26745824c32"
+      Hint: Description
+      Value: Field must have a value.
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "92e0c1e2-99a5-4a9d-ba5a-642a23dc3fa4"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261015T085123Z
+    - ID: "da43c533-cbae-43d0-9019-65b1e346f984"
+      Hint: Title
+      Value: Is required

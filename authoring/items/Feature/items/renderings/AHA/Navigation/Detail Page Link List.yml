@@ -1,0 +1,97 @@
+﻿---
+ID: "204da050-d392-4b8f-9a20-6e6702349ce2"
+Parent: "bd0eb4b9-78f9-4f9e-8052-24ab30d6a582"
+Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
+Path: /sitecore/layout/Renderings/Feature/abc/Navigation/Detail Page Link List
+SharedFields:
+- ID: "037fe404-dd19-4bf7-8e30-4dadf68b27b0"
+  Hint: componentName
+  Value: DetailPageLinkList
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: office/32x32/elements_tree.png
+- ID: "17bb046a-a32a-41b3-8315-81217947611b"
+  Hint: ComponentQuery
+  Value: |
+    query DetailPageLinkList($datasource: String!, $language: String!) {
+      datasource: item(path: $datasource, language: $language) {
+        Heading: field(name: "Heading") { jsonValue }
+        children(includeTemplateIDs: ["{1B182859-A89D-48C7-B772-BA32060B35C0}"]) {
+          results {
+            id
+            PageItem: field(name: "PageItem") {
+              ... on LookupField { targetItem { ...DetailPage } }
+            }
+            Link: field(name: "Link") { jsonValue }
+            Image: field(name: "Image") { jsonValue }
+            Title: field(name: "Title") { jsonValue }
+            Description: field(name: "Description") { jsonValue }
+            AriaLabel: field(name: "AriaLabel") { jsonValue }
+          }
+        }
+      }
+      siteSettings: item(path: "{C1A31FF3-9A48-4465-9249-924C0D44925A}", language: $language) {
+        GlobalSocialFallbackImage: field(name: "GlobalSocialFallbackImage") { jsonValue }
+      }
+    }
+    
+    fragment DetailPage on Item {
+      url { path }
+      PageTitle: field(name: "PageTitle") { value }
+      MetaDescription: field(name: "MetaDescription") { value }
+      OpenGraphImage: field(name: "OpenGraphImage") { jsonValue }
+    }
+    
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
+  Hint: Datasource Template
+  Value: /sitecore/templates/Feature/abc/Navigation/Detail Page Link List/Detail Page Link List
+- ID: "a2f5d9df-8cba-4a1d-99eb-51acb94cb057"
+  Hint: Page Editor Buttons
+  Value: |
+    {31A3A929-C599-4DD3-91A6-F4A9487CC8B7}
+    {587F8FBD-E38F-4E2B-8DE4-1F474D9DDD00}
+- ID: "a77e8568-1ab3-44f1-a664-b7c37ec7810d"
+  Hint: Parameters Template
+  Value: "{B099276D-66FA-4417-8BFF-DDCEA92867B1}"
+- ID: "b4bbc0be-7619-4678-b2f7-947d84aa77a9"
+  Hint: Content Dependencies
+  Value: "{B0B5B0CD-6445-4FAE-A989-6CA9C50CC29A}"
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "query:$site/*[@@name='Data']/*[@@templatename='Detail Page Link List Folder']"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "65ddd9f0-6405-4faa-a188-ef5a833eed83"
+- ID: "e829c217-5e94-4306-9c48-2634b094fdc2"
+  Hint: OtherProperties
+  Value: IsRenderingsWithDynamicPlaceholders=true
+Languages:
+- Language: en
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "6f53c9a4-23d7-44b9-913e-4ce8e09532fe"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261014T081529Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2f94f665-c56e-4793-98c4-c3b38ac50326"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261014T092751Z

@@ -1,0 +1,74 @@
+{/*
+  Storybook's landing page. Hand-authored, nothing here is generated, so keep claims that could
+  go stale (counts, file paths) to a minimum and link to the live pages instead.
+
+  Not under src/ because it documents the workspace rather than any component. main.ts picks it
+  up with a glob covering this directory.
+*/}
+
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Welcome" />
+
+<div className="grid gap-[var(--abc-spacing-gap-lg)]">
+  <img src="/logos/abc/wordmark/lg.svg" alt="American Heart Association" width="166" height="58" />
+</div>
+
+# Design System
+
+This is the shared component library for the American Heart Association site.
+
+Every colour, size and spacing value you see here comes from one Figma file. Storybook and the
+live site read the exact same values, so nothing has to be copied between them and nothing can
+drift out of sync.
+
+---
+
+## Where to start
+
+**Designers and content authors.** Open **Design** to see the live palette, type scale and
+spacing. **Design → Icons** is searchable and gives you the exact name to type into a
+Sitecore field.
+
+**Engineers.** Start with **Design → Design Tokens** to see how a Figma value becomes CSS,
+then browse **Atoms** for the approved component set.
+
+---
+
+## Design
+
+| Page          | What it covers                                        |
+| ------------- | ----------------------------------------------------- |
+| Design Tokens | How a value in Figma becomes CSS on the site          |
+| Colors        | The full palette, and the named roles you actually use |
+| Typography    | The display, heading, body and label scales           |
+| Spacing       | Gap and inset sizes, which change with screen width   |
+| Radius        | Named corner roundings                                |
+| Elevation     | Shadow presets and focus rings                        |
+| Breakpoints   | The screen widths everything responsive switches at   |
+| Icons         | The approved icon set, searchable                     |
+| Logos         | abc and partner marks, with usage rules               |
+
+---
+
+## Two things worth knowing
+
+**Use the token that names a purpose, not a colour.** Write
+`--abc-surface-brand-brand-1` ("the main brand surface") rather than
+`--abc-color-brand-primary-500` ("this particular red"). If the brand colour ever changes, the
+first one keeps working and the second one has to be hunted down everywhere.
+
+**The catalog is intentionally focused.** It contains only the Design references and Atom
+components approved for this Storybook.
+
+---
+
+## Viewing at other sizes
+
+Spacing and type sizes jump at set screen widths rather than scaling smoothly. Use the
+**viewport toolbar** above to switch between the four Figma frame widths and watch the
+Design pages respond.
+
+The **Light / Dark** background control is there for checking contrast. Dark mode is not part of
+the design system yet, because the Figma file has no dark colour set. Everything is designed
+light first.

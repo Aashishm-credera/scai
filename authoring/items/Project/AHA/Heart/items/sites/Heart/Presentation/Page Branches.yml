@@ -1,0 +1,70 @@
+﻿---
+ID: "1a306ec0-b02c-4af0-9ccc-079dac87117d"
+Parent: "c75a0a5d-dcf5-4551-ab32-ccb4a66cb2f8"
+Template: "fbc802e5-4b9e-480f-93da-3f2a80cae5cb"
+Path: /sitecore/content/abc/Heart/Presentation/Page Branches
+BranchID: "aa6c7b9e-a399-47ae-82b8-0d88c695249b"
+SharedFields:
+- ID: "bb3391dd-f8be-4b2e-ae9f-47bb63c166ce"
+  Hint: Rule
+  Value: |
+    <ruleset>
+      <rule
+        uid="{1B0D3CDE-09AA-406A-A58B-419D9A2730BD}">
+        <actions>
+          <action
+            id="{D46EC8E5-7B46-47DE-B44A-4C5C30EF48D1}"
+            uid="9E3572976F0946ECBB3BEAE48BA7E3FC"
+            PageBranchId="{C9328824-EEA5-4951-AE7D-EAFB1227CBC4}" />
+          <action
+            id="{D46EC8E5-7B46-47DE-B44A-4C5C30EF48D1}"
+            uid="65426FC087B14551938DD9784E5ACAB3"
+            PageBranchId="{B7099C12-977C-4C77-842E-64EB4AEFA839}" />
+        </actions>
+        <conditions>
+          <or
+            uid="03BBF714106E4AB6809991FCC3A8AA44">
+            <condition
+              id="{D0810F9D-734C-452D-BBB6-4730368D68F1}"
+              uid="437AFD5F78824DB4B41B669172686B2C"
+              templateid="{421503DD-E972-4C06-B717-CB4723C294A6}" />
+            <condition
+              id="{5DE6D53E-EA62-4D17-8BDD-FEBCD80AC07B}"
+              uid="D508F3C3291E49E38F1761A32F2EF318"
+              templateid="{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}" />
+          </or>
+        </conditions>
+      </rule>
+    </ruleset>
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "68b7f92b-e3d7-4230-b6dd-5270c9478d00"
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{63D0F6B2-D72F-4C31-BBA2-1709C4B68B7B}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260923T222528Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\mehedi@dataweavers.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\mehedi@dataweavers.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f4583550-b0b8-40da-8c7d-e71837f05a20"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261028T132559Z

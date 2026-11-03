@@ -1,0 +1,45 @@
+﻿---
+ID: "684ad2ed-2fe8-4832-83b1-2cf55976b67d"
+Parent: "51d9152e-d10b-4109-9ab0-1f7f53cfd9d3"
+Template: "51d9152e-d10b-4109-9ab0-1f7f53cfd9d3"
+Path: /sitecore/templates/Feature/abc/Page Content/Table/Table/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {D1F0683F-AF8E-4707-84F6-DE797EB1496B}
+    {B9B88CEC-7618-456E-B7FF-B4DEA5D14A3E}
+    {99C6C27D-0DB4-4F0B-8A59-49C70CF147A4}
+    {320CF88A-53F3-46F1-9ABF-C3EEFECB29C6}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "c307257f-44e1-49a6-94e4-301a82b54e1a"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261023T063757Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "5e141c46-aad6-43c3-8ea8-b83661baad78"
+      Hint: Title
+      Value: $name
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ccf07388-9918-4b49-b733-a14844643b00"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261029T081034Z

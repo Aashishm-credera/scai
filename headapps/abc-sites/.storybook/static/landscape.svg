@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <!-- Storybook test image. The subject sits off-centre at (1200, 420) so focal-point cropping is visible. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4e3d7"/>
+      <stop offset="1" stop-color="#e8c9b4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <rect y="760" width="1600" height="240" fill="#c79a82"/>
+  <g stroke="#a0121d" stroke-opacity="0.18" stroke-width="2">
+    <path d="M400 0V1000M800 0V1000M1200 0V1000M0 250H1600M0 500H1600M0 750H1600"/>
+  </g>
+  <circle cx="1200" cy="420" r="150" fill="#cf222b"/>
+  <circle cx="1200" cy="420" r="18" fill="#fff"/>
+  <path d="M1200 230V610M1010 420H1390" stroke="#fff" stroke-width="4"/>
+  <text x="1200" y="660" fill="#5c1116" font-family="system-ui, sans-serif" font-size="44" text-anchor="middle">Subject</text>
+  <text x="60" y="110" fill="#5c1116" font-family="system-ui, sans-serif" font-size="40">Landscape 1600 × 1000</text>
+</svg>

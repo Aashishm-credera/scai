@@ -1,0 +1,30 @@
+{
+  "sitecore": {
+    "clientId": "hz7qxuHUm3YQY5Yk4fxXdKaOoUyzxLlr",
+    "clientSecret": "Secret:XMCClientSecret",
+    "environmentId": "7MQ8cdys0D9I3Zr0Qdz1yE",
+    "editingHosts": [
+      { "name": "abc-uat-sites", "id": "2198PgdcCCHrM3ybWvNIKs" }
+    ],
+    "deployment": {
+      "deployCM": true,
+      "deployEditingHost": true,
+      "pushItems": true,
+      "upsertVariables": true,
+      "publish": false
+    },
+    "cmBuild": {
+      "skipSerializationPush": true,
+      "skipPostActions": true
+    },
+    "changeDetection": {
+      "actions": {
+        "deploy-cm": ["authoring/**", "xmcloud.build.json"],
+        "push-item": ["authoring/**"],
+        "deploy-editing-host/abc-uat-sites": ["headapps/abc-sites/**"]
+      }
+    }
+  },
+  "keyVaultName": "abc-uat-kv-app",
+  "infrastructureResourceGroup": "abc-uat"
+}

@@ -1,0 +1,40 @@
+﻿---
+ID: "3476e01d-8f32-4b37-9a9a-879b32356c75"
+Parent: "3b7b4c09-d242-4d0f-aaca-9e8e30604b0f"
+Template: "3b7b4c09-d242-4d0f-aaca-9e8e30604b0f"
+Path: /sitecore/templates/Foundation/abc/Icon/Icon Folder/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {37214599-8460-40A6-B14A-E58577C548AA}
+    {3B7B4C09-D242-4D0F-AACA-9E8E30604B0F}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "03444d57-3b22-4ab9-a198-47e1c9bc22a3"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261012T104621Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e4e3f906-b23c-4336-90ae-527a253b6f21"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261012T104853Z

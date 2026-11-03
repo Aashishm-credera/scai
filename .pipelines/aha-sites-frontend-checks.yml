@@ -1,0 +1,143 @@
+# Frontend checks for the Next.js head app (headapps/abc-sites) only.
+#
+# Lint, formatting, types, unit tests, design tokens, icons, the Storybook build, and Storybook's
+# accessibility and interaction tests. It builds nothing that gets deployed, needs no Sitecore
+# credentials or service connection, and never looks at authoring/, local-containers/ or the
+# release pipelines. Deployments stay in arc-head-standard-release.yml.
+#
+# Setup in Azure DevOps (once):
+#   1. Pipelines > New pipeline > Azure Repos Git > heart-scai > Existing Azure Pipelines YAML file
+#      > /.pipelines/abc-sites-frontend-checks.yml. Save it as "abc-sites frontend checks".
+#   2. Repos > Branches > develop > Branch policies > Build validation > add this pipeline.
+#      Path filter: /headapps/abc-sites/*; /.pipelines/abc-sites-frontend-checks.yml
+#      Trigger: Automatic. Policy requirement: Required (or Optional while the team adopts it).
+#      Repeat for main if PRs target it.
+#   Azure Repos ignores a YAML `pr:` trigger, so the branch policy in step 2 is what runs this on
+#   pull requests. The `trigger:` below covers pushes to the long-lived branches.
+
+name: '$(Build.SourceBranchName) frontend checks $(Date:yyyyMMdd)$(Rev:.r)'
+
+trigger:
+  branches:
+    include:
+      - 'develop'
+      - 'main'
+      - 'release/*'
+  paths:
+    include:
+      - 'headapps/abc-sites'
+      - '.pipelines/abc-sites-frontend-checks.yml'
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  APP_ROOT: '$(Build.SourcesDirectory)/headapps/abc-sites'
+  # Same Node.js version the rendering hosts are built with (.pipelines/variables/platform/*.json).
+  NODE_VERSION: '24.16.0'
+  npm_config_cache: '$(Pipeline.Workspace)/.npm'
+  PLAYWRIGHT_BROWSERS_PATH: '$(Pipeline.Workspace)/ms-playwright'
+  NEXT_TELEMETRY_DISABLED: '1'
+
+jobs:
+  - job: Verify
+    displayName: 'abc-sites frontend checks'
+    timeoutInMinutes: 30
+    steps:
+      - checkout: self
+        fetchDepth: 1
+        clean: true
+
+      - task: UseNode@1
+        displayName: 'Use Node.js $(NODE_VERSION)'
+        inputs:
+          version: '$(NODE_VERSION)'
+
+      - task: Cache@2
+        displayName: 'Cache npm'
+        inputs:
+          key: 'npm | "$(Agent.OS)" | headapps/abc-sites/package-lock.json'
+          restoreKeys: |
+            npm | "$(Agent.OS)"
+          path: '$(npm_config_cache)'
+
+      # Every check below runs even when an earlier one fails, so one run reports every problem.
+      # They are skipped only when dependencies could not be installed.
+      - script: |
+          npm ci
+          echo "##vso[task.setvariable variable=depsInstalled]true"
+        displayName: 'Install dependencies'
+        workingDirectory: '$(APP_ROOT)'
+
+      - script: npm run lint
+        displayName: 'Lint'
+        workingDirectory: '$(APP_ROOT)'
+        condition: and(succeededOrFailed(), eq(variables.depsInstalled, 'true'))
+
+      - script: npm run format:check
+        displayName: 'Check formatting'
+        workingDirectory: '$(APP_ROOT)'
+        condition: and(succeededOrFailed(), eq(variables.depsInstalled, 'true'))
+
+      # Type checking imports generated, gitignored .sitecore files. The offline CLI config
+      # writes them without calling Sitecore Edge (see sitecore.cli.offline.config.ts).
+      - script: |
+          npm run sitecore-tools:generate-map
+          npm run sitecore-tools:build:offline
+          npm run typecheck
+        displayName: 'Type check'
+        workingDirectory: '$(APP_ROOT)'
+        condition: and(succeededOrFailed(), eq(variables.depsInstalled, 'true'))
+
+      - script: npm test
+        displayName: 'Unit tests'
+        workingDirectory: '$(APP_ROOT)'
+        condition: and(succeededOrFailed(), eq(variables.depsInstalled, 'true'))
+
+      - script: npm run tokens:check
+        displayName: 'Validate, test and generate design tokens'
+        workingDirectory: '$(APP_ROOT)'
+        condition: and(succeededOrFailed(), eq(variables.depsInstalled, 'true'))
+
+      # Fails when a token was removed or renamed since the pinned baseline. To accept it, review
+      # design-tokens/reports/changes.md and run `npm run tokens:baseline`, which also writes the
+      # CHANGELOG entry. A token disappearing should never merge unnoticed.
+      - script: npm run tokens:breaking
+        displayName: 'Fail on breaking token changes'
+        workingDirectory: '$(APP_ROOT)'
+        condition: and(succeededOrFailed(), eq(variables.depsInstalled, 'true'))
+
+      - script: git diff --exit-code -- design-tokens/generated design-tokens/reports src/design-system/tokens/generated src/app/globals.css
+        displayName: 'Verify generated token assets are committed'
+        workingDirectory: '$(APP_ROOT)'
+        condition: and(succeededOrFailed(), eq(variables.depsInstalled, 'true'))
+
+      - script: npm run icons:check
+        displayName: 'Verify generated icon assets are committed'
+        workingDirectory: '$(APP_ROOT)'
+        condition: and(succeededOrFailed(), eq(variables.depsInstalled, 'true'))
+
+      - script: npm run build-storybook
+        displayName: 'Build Storybook'
+        workingDirectory: '$(APP_ROOT)'
+        condition: and(succeededOrFailed(), eq(variables.depsInstalled, 'true'))
+
+      # npm ci does not download browsers, and the Storybook tests use Playwright's own Chromium.
+      - task: Cache@2
+        displayName: 'Cache Playwright browser'
+        inputs:
+          key: 'playwright | "$(Agent.OS)" | headapps/abc-sites/package-lock.json'
+          path: '$(PLAYWRIGHT_BROWSERS_PATH)'
+        condition: and(succeededOrFailed(), eq(variables.depsInstalled, 'true'))
+
+      - script: npm run playwright:install
+        displayName: 'Install Playwright browser'
+        workingDirectory: '$(APP_ROOT)'
+        condition: and(succeededOrFailed(), eq(variables.depsInstalled, 'true'))
+
+      # Accessibility gate: .storybook/preview.tsx sets a11y test: 'error', so an axe violation
+      # in any story fails here. It only covers components that have a story.
+      - script: npm run test:storybook
+        displayName: 'Accessibility and interaction tests'
+        workingDirectory: '$(APP_ROOT)'
+        condition: and(succeededOrFailed(), eq(variables.depsInstalled, 'true'))

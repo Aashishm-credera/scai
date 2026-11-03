@@ -1,0 +1,23 @@
+﻿---
+ID: "2a6989b1-3b27-4c48-95e2-b66831a72f49"
+Parent: "e823ca15-54d9-4303-99f3-f7d37c62a9cc"
+Template: "29e96728-74ea-439c-9901-02f8edc0805e"
+Path: "/sitecore/content/abc/Heart/Data/Label Colors/foreground-pink"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261027T062822Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "bf5b4f69-34e9-4ed5-a87b-4d8fbd24dc66"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T063054Z

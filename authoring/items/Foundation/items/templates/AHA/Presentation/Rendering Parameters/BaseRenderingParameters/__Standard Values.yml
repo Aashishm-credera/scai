@@ -1,0 +1,27 @@
+﻿---
+ID: "41ba5a71-bc0b-46fa-9e5a-718c3f2bcc36"
+Parent: "8dcf7f80-4bd5-4cf0-ace5-8f53cee2dad9"
+Template: "8dcf7f80-4bd5-4cf0-ace5-8f53cee2dad9"
+Path: /sitecore/templates/Foundation/abc/Presentation/Rendering Parameters/BaseRenderingParameters/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20210520T085436Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c715ac95-2437-449c-abd3-19ae49d82b98"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261007T083105Z

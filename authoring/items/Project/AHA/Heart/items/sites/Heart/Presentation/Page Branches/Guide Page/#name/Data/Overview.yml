@@ -1,0 +1,26 @@
+﻿---
+ID: "60581186-aa5d-446d-99b9-603dff4c74ca"
+Parent: "ba4060e1-aaf5-447e-bdf5-257ccf92f14b"
+Template: "e993ed83-86b6-4d96-aa67-a7e304865f44"
+Path: /sitecore/content/abc/Heart/Presentation/Page Branches/Guide Page/$name/Data/Overview
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261027T092227Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2de350e0-ef60-4f4c-b762-d0ad2504b7ab"
+    - ID: "b5fe3c1f-1103-44b9-bdcc-70db4ab08f6b"
+      Hint: Heading
+      Value: Overview
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T092227Z

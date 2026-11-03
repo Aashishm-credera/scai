@@ -1,0 +1,127 @@
+[
+  {
+    "severity": "warning",
+    "kind": "non-numeric-font-weight",
+    "message": "font.weight.500 is \"Medium\" in Figma, which is not a valid CSS font-weight. Using 500 (from the token's own path) instead.",
+    "path": "font.weight.500",
+    "figmaValue": "Medium",
+    "usedInstead": 500
+  },
+  {
+    "severity": "warning",
+    "kind": "non-numeric-font-weight",
+    "message": "font.weight.600 is \"Semibold\" in Figma, which is not a valid CSS font-weight. Using 600 (from the token's own path) instead.",
+    "path": "font.weight.600",
+    "figmaValue": "Semibold",
+    "usedInstead": 600
+  },
+  {
+    "severity": "warning",
+    "kind": "non-numeric-font-weight",
+    "message": "font.weight.700 is \"Bold\" in Figma, which is not a valid CSS font-weight. Using 700 (from the token's own path) instead.",
+    "path": "font.weight.700",
+    "figmaValue": "Bold",
+    "usedInstead": 700
+  },
+  {
+    "severity": "warning",
+    "kind": "non-numeric-font-weight",
+    "message": "font.weight.900 is \"Heavy\" in Figma, which is not a valid CSS font-weight. Using 900 (from the token's own path) instead.",
+    "path": "font.weight.900",
+    "figmaValue": "Heavy",
+    "usedInstead": 900
+  },
+  {
+    "severity": "warning",
+    "kind": "known-name-collision",
+    "message": "2 tokens in primitives all declare the CSS name --abc-font-size-12 in Figma. falling back to path-derived names so no value is lost. Fix the codeSyntax in Figma.",
+    "name": "--abc-font-size-12",
+    "paths": [
+      "font.size.12",
+      "fontSize.12"
+    ]
+  },
+  {
+    "severity": "warning",
+    "kind": "known-name-collision",
+    "message": "2 tokens in primitives all declare the CSS name --abc-font-size-13 in Figma. falling back to path-derived names so no value is lost. Fix the codeSyntax in Figma.",
+    "name": "--abc-font-size-13",
+    "paths": [
+      "font.size.13",
+      "fontSize.13"
+    ]
+  },
+  {
+    "severity": "warning",
+    "kind": "known-name-collision",
+    "message": "2 tokens in primitives all declare the CSS name --abc-font-size-14 in Figma. falling back to path-derived names so no value is lost. Fix the codeSyntax in Figma.",
+    "name": "--abc-font-size-14",
+    "paths": [
+      "font.size.14",
+      "fontSize.14"
+    ]
+  },
+  {
+    "severity": "warning",
+    "kind": "name-collision-fallback",
+    "message": "fontSize.12 in primitives would be named --abc-font-size-12, but another token already claimed that name, using a numbered fallback instead. Fix the codeSyntax in Figma.",
+    "path": "fontSize.12",
+    "name": "--abc-font-size-12"
+  },
+  {
+    "severity": "warning",
+    "kind": "name-collision-fallback",
+    "message": "fontSize.13 in primitives would be named --abc-font-size-13, but another token already claimed that name, using a numbered fallback instead. Fix the codeSyntax in Figma.",
+    "path": "fontSize.13",
+    "name": "--abc-font-size-13"
+  },
+  {
+    "severity": "warning",
+    "kind": "name-collision-fallback",
+    "message": "fontSize.14 in primitives would be named --abc-font-size-14, but another token already claimed that name, using a numbered fallback instead. Fix the codeSyntax in Figma.",
+    "path": "fontSize.14",
+    "name": "--abc-font-size-14"
+  },
+  {
+    "severity": "warning",
+    "kind": "known-name-collision",
+    "message": "2 tokens in Color/Light all declare the CSS name --abc-text-brand-secondary in Figma. falling back to path-derived names so no value is lost. Fix the codeSyntax in Figma.",
+    "name": "--abc-text-brand-secondary",
+    "paths": [
+      "text.brand.brand-2-primary",
+      "text.brand.brand-2-secondary"
+    ]
+  },
+  {
+    "severity": "warning",
+    "kind": "known-name-collision",
+    "message": "2 tokens in Color/Light all declare the CSS name --abc-text-brand-primary in Figma. falling back to path-derived names so no value is lost. Fix the codeSyntax in Figma.",
+    "name": "--abc-text-brand-primary",
+    "paths": [
+      "text.brand.brand-1-primary",
+      "text.brand.brand-1-secondary"
+    ]
+  },
+  {
+    "severity": "warning",
+    "kind": "known-name-collision",
+    "message": "4 tokens in Color/Light all declare the CSS name --abc-surface-brand-primary in Figma. falling back to path-derived names so no value is lost. Fix the codeSyntax in Figma.",
+    "name": "--abc-surface-brand-primary",
+    "paths": [
+      "surface.brand.brand-1",
+      "surface.brand.brand-1-secondary",
+      "surface.brand.brand-1-hover",
+      "surface.brand.brand-1-secondary-hover"
+    ]
+  },
+  {
+    "severity": "warning",
+    "kind": "known-name-collision",
+    "message": "2 tokens in Color/Light all declare the CSS name --abc-surface-brand-secondary in Figma. falling back to path-derived names so no value is lost. Fix the codeSyntax in Figma.",
+    "name": "--abc-surface-brand-secondary",
+    "paths": [
+      "surface.brand.brand-2",
+      "surface.brand.brand-2-hover"
+    ]
+  }
+]

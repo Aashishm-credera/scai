@@ -1,0 +1,37 @@
+﻿---
+ID: "79fa084a-b798-4ea0-9eae-cfd6cbce2cd0"
+Parent: "08452519-7821-4bef-9663-978baae8cedc"
+Template: "08452519-7821-4bef-9663-978baae8cedc"
+Path: /sitecore/templates/Feature/abc/Page Content/Emergency Callout/Emergency Callout/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261023T050826Z
+    - ID: "4b2c0237-26e8-4709-826b-4c4f372012de"
+      Hint: Title
+      Value: $name
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "7e4f174a-b76d-4121-9d8e-7374bb325422"
+      Hint: Icon
+      Value: "{B2BE42A4-67C8-4499-B56E-CDA15D7B7054}"
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "74c2ce5d-4de5-4ac2-aac3-d4e4015e3676"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261029T080902Z

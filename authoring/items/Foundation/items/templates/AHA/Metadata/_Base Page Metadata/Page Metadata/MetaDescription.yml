@@ -1,0 +1,74 @@
+﻿---
+ID: "fb3d30c2-a65a-48ee-8b02-afcb0d3109f2"
+Parent: "589316cb-00ab-4d7e-8230-81a8b7370731"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Foundation/abc/Metadata/_Base Page Metadata/Page Metadata/MetaDescription
+SharedFields:
+- ID: "21828437-ea4b-40a1-8c61-4ce60ea41db6"
+  Hint: Validate Button
+  Value: |
+    {A563841A-7577-4150-8EA7-BB2ECBFA0C30}
+    {804748CA-9762-4098-B218-E81A57C1E157}
+- ID: "337e20e1-999a-4eea-85ad-b58a03ae75cc"
+  Hint: Quick Action Bar
+  Value: |
+    {A563841A-7577-4150-8EA7-BB2ECBFA0C30}
+    {804748CA-9762-4098-B218-E81A57C1E157}
+- ID: "53c432c4-7122-4e2d-8296-db4184fd1735"
+  Hint: Workflow
+  Value: |
+    {A563841A-7577-4150-8EA7-BB2ECBFA0C30}
+    {804748CA-9762-4098-B218-E81A57C1E157}
+- ID: "9c903e29-650d-4af2-b9bd-526d5c14a1a5"
+  Hint: Validator Bar
+  Value: |
+    {A563841A-7577-4150-8EA7-BB2ECBFA0C30}
+    {804748CA-9762-4098-B218-E81A57C1E157}
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: "Multi-Line Text"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 200
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "e7a951de-6f5d-4068-af05-3ea4c1683e2d"
+Languages:
+- Language: en
+  Fields:
+  - ID: "19a69332-a23e-4e70-8d16-b2640cb24cc8"
+    Hint: Title
+    Value: Meta Description
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "e942e937-a1d0-4923-8595-b294a5e710d2"
+  - ID: "577f1689-7de4-4ad2-a15f-7fdc1759285f"
+    Hint: __Long description
+    Value: Provide a concise summary of the page content to help users understand what to expect from search results. Aim for 155 characters or fewer.
+  - ID: "9541e67d-ce8c-4225-803d-33f7f29f09ef"
+    Hint: __Short description
+    Value: Keep the description to 155 characters or fewer.
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261005T102107Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a1495379-9fce-4655-9af7-9d19a2b323e2"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261019T102855Z

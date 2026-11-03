@@ -1,0 +1,30 @@
+{
+  "sitecore": {
+    "clientId": "hz7qxuHUm3YQY5Yk4fxXdKaOoUyzxLlr",
+    "clientSecret": "Secret:XMCClientSecret",
+    "environmentId": "6vbEKx5978PG6BNEvyWiYE",
+    "editingHosts": [
+      { "name": "abc-preprod-sites", "id": "2ww6639nmJt3zVQNW0adMb" }
+    ],
+    "deployment": {
+      "deployCM": true,
+      "deployEditingHost": true,
+      "pushItems": true,
+      "upsertVariables": true,
+      "publish": false
+    },
+    "cmBuild": {
+      "skipSerializationPush": true,
+      "skipPostActions": true
+    },
+    "changeDetection": {
+      "actions": {
+        "deploy-cm": ["authoring/**", "xmcloud.build.json"],
+        "push-item": ["authoring/**"],
+        "deploy-editing-host/abc-preprod-sites": ["headapps/abc-sites/**"]
+      }
+    }
+  },
+  "keyVaultName": "abc-pre-kv-app",
+  "infrastructureResourceGroup": "abc-pre"
+}

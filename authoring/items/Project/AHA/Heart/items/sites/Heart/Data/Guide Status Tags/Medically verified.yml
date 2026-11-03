@@ -1,0 +1,29 @@
+﻿---
+ID: "46760fba-ead1-4924-a093-ee1e22c58466"
+Parent: "1a3063ca-d133-4c07-86ea-124eb0ae87bd"
+Template: "9cac12fa-c3ea-44b8-bd56-9156ef1ee683"
+Path: /sitecore/content/abc/Heart/Data/Guide Status Tags/Medically verified
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261016T064124Z
+    - ID: "3a172815-3062-4bcc-8609-d0390efa1ce6"
+      Hint: Text
+      Value: Medically verified
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "10662183-4205-4f82-9855-2a4829d3c326"
+    - ID: "9c20c382-bc6d-4845-9449-c88b39843603"
+      Hint: Icon
+      Value: "{6644C19F-8733-48E2-890E-5DEAAF5CC33C}"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261016T064141Z

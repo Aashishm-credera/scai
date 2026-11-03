@@ -1,0 +1,40 @@
+﻿---
+ID: "9b9abe55-c0ac-4086-b15c-ac420c6bd3eb"
+Parent: "cae84709-c501-4433-aaae-67ad2079303b"
+Template: "cae84709-c501-4433-aaae-67ad2079303b"
+Path: /sitecore/templates/Project/abc/Partial Design Folder/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {CAE84709-C501-4433-AAAE-67AD2079303B}
+    {FD2059FD-6043-4DFE-8C04-E2437CE87634}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "058b5a7f-31bc-45f0-9dfe-baf4530c88fd"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260923T222112Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\mehedi@dataweavers.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\mehedi@dataweavers.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e6961305-5b01-4ef3-bc65-233e5632ff69"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\mehedi@dataweavers.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260923T222116Z

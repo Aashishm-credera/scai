@@ -1,0 +1,23 @@
+﻿---
+ID: "ee2caf82-a662-43f5-89c6-8dabb38dd17e"
+Parent: "e823ca15-54d9-4303-99f3-f7d37c62a9cc"
+Template: "29e96728-74ea-439c-9901-02f8edc0805e"
+Path: "/sitecore/content/abc/Heart/Data/Label Colors/foreground-orange"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261027T062811Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "629eafb0-56a2-4ebd-a573-b3e53a87e7dd"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T063049Z

@@ -1,0 +1,67 @@
+name: "$(Build.Reason) triggered Head deploy from $(Build.SourceBranchName)"
+
+trigger:
+  branches:
+    include:
+    - 'main'
+    - 'develop'
+    - 'release/*'
+  paths:
+    exclude:
+      - "*.md" #Exclude changes to mark up documents such as readme.md
+      - "*.ps1" #Exclude changes to any powershell script files
+      - ".pipelines/*" #Exclude changes to pipeline yaml scripts
+
+extends:
+  template: templates/arc-head-release.yml
+  parameters:
+    AzureServiceConnection: "scon-sitecoreai-nonprod"
+    ApplicationRoot: 'headapps/abc-sites'
+    # Optional - Verification build is used to validate the build before deploying to any environment. If not specified, the first environment will be used for verification.
+    VerificationBuild:
+      variableGroup: "Arc-Verification-Variables"
+      platformFile: variables/platform/head-app.verification.json
+      appFile: variables/application/head-app.dev.json
+    # Environments - Add/update/remove environments as required. 
+    Environments:
+
+      - env: DEV
+        # The deployRestriction property is used to control which branches can deploy to the environment. 
+        deployRestriction: ${{ eq(variables['Build.SourceBranch'], 'refs/heads/develop') }}
+        # The platformFile is used to specify the platform configuration for the environment.
+        platformFile: variables/platform/head-app.dev.json
+        # and appFile is used to specify the application variables used for the build.
+        appFile: variables/application/head-app.dev.json
+
+      - env: TEST
+        # The deployRestriction property is used to control which branches can deploy to the environment. 
+        deployRestriction: ${{ eq(variables['Build.SourceBranch'], 'refs/heads/develop') }}
+        # The platformFile is used to specify the platform configuration for the environment.
+        platformFile: variables/platform/head-app.test.json
+        # and appFile is used to specify the application variables used for the build.
+        appFile: variables/application/head-app.test.json
+
+      - env: UAT
+        # The deployRestriction property is used to control which branches can deploy to the environment. 
+        deployRestriction: ${{ eq(variables['Build.SourceBranch'], 'refs/heads/develop') }}
+        # The platformFile is used to specify the platform configuration for the environment.
+        platformFile: variables/platform/head-app.uat.json
+        # and appFile is used to specify the application variables used for the build.
+        appFile: variables/application/head-app.uat.json
+
+      - env: Pre-Prod
+        # The deployRestriction property is used to control which branches can deploy to the environment.
+        deployRestriction: ${{ eq(variables['Build.SourceBranch'], 'refs/heads/develop') }}
+        # The platformFile is used to specify the platform configuration for the environment.
+        platformFile: variables/platform/head-app.preprod.json
+        # and appFile is used to specify the application variables used for the build.
+        appFile: variables/application/head-app.preprod.json
+
+      - env: Production
+        # The deployRestriction property is used to control which branches can deploy to the environment.
+        deployRestriction: ${{ or(startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'), startsWith(variables['Build.SourceBranch'], 'refs/heads/hotfix'), eq(variables['Build.SourceBranch'], 'refs/heads/develop')) }}
+        # The platformFile is used to specify the platform configuration for the environment.
+        platformFile: variables/platform/head-app.production.json
+        # and appFile is used to specify the application variables used for the build.
+        appFile: variables/application/head-app.production.json
+        azureServiceConnection: "scon-sitecoreai-prod"

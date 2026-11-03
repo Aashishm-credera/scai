@@ -1,0 +1,29 @@
+﻿---
+ID: "de8e0b5c-2b68-4cac-92b5-454e2d36fa04"
+Parent: "ba4060e1-aaf5-447e-bdf5-257ccf92f14b"
+Template: "985d366f-cf7b-4472-b09b-5a881075f4fc"
+Path: /sitecore/content/abc/Heart/Presentation/Page Branches/Guide Page/$name/Data/Guide Hero
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "0bc95b5d-6fcb-45ef-8e26-907a39f001c4"
+      Hint: Title
+      Value: $name
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261027T092207Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "33f0c234-0cd1-4d3e-8d35-977e29bcbdd0"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T092947Z

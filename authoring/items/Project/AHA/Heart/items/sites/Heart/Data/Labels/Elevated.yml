@@ -1,0 +1,29 @@
+﻿---
+ID: "6132e311-13ce-486e-98a6-55659bfb86e8"
+Parent: "eb7ef9af-3f0b-495a-8c12-4b2ff4ba0773"
+Template: "5a63400c-7850-4749-b6ee-fe64ef49dc09"
+Path: /sitecore/content/abc/Heart/Data/Labels/Elevated
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261027T062521Z
+    - ID: "76f9144c-c805-42fe-aed7-9cb364aaf258"
+      Hint: Color
+      Value: "foreground-warning"
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "268fd37b-e42d-4f57-a731-c5d7b43ec061"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "c64bba7a-ae55-4ab1-abc4-5a8ff4f237e8"
+      Hint: Text
+      Value: Elevated
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261029T143543Z

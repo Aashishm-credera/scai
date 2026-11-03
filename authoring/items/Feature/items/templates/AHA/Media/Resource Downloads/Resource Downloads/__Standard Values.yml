@@ -1,0 +1,47 @@
+﻿---
+ID: "9d6e98bf-b2d2-48a5-9300-a5101bb9c596"
+Parent: "786e38a0-9485-44b3-8d6e-70214e6070e8"
+Template: "786e38a0-9485-44b3-8d6e-70214e6070e8"
+Path: /sitecore/templates/Feature/abc/Media/Resource Downloads/Resource Downloads/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: "{6312FB41-E1FE-4163-BDB1-01607BDFD1B4}"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "ce914282-37eb-48da-8208-4f8de5fdb8ee"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261015T085030Z
+    - ID: "3b27cc91-fd3b-40d9-a97d-e8d34c6ba0c8"
+      Hint: Description
+      Value: lorem ipsum dolor sit amet consectetur
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c9267db7-1596-4a6c-8477-701075830ecd"
+    - ID: "aa95a310-5486-4e10-96dd-0061975228c5"
+      Hint: ButtonText
+      Value: Download PDF
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261015T091718Z
+    - ID: "f0fc5414-d5bf-494e-9733-a963241b6c6f"
+      Hint: Title
+      Value: $name

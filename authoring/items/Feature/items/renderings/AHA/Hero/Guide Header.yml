@@ -1,0 +1,101 @@
+﻿---
+ID: "8b936536-6d15-45a2-92c2-15ba8f00fae6"
+Parent: "94bb424b-cde2-44fe-9aee-69cfe04eaab3"
+Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
+Path: /sitecore/layout/Renderings/Feature/abc/Hero/Guide Header
+SharedFields:
+- ID: "037fe404-dd19-4bf7-8e30-4dadf68b27b0"
+  Hint: componentName
+  Value: GuideHeader
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/window_dialog.png
+- ID: "17bb046a-a32a-41b3-8315-81217947611b"
+  Hint: ComponentQuery
+  Value: |
+    query GuideHeader($datasource: String!, $contextItem: String!, $language: String!) {
+      datasource: item(path: $datasource, language: $language) {
+        BackgroundImage: field(name: "BackgroundImage") { jsonValue }
+        FocalPointX: field(name: "FocalPointX") { jsonValue }
+        FocalPointY: field(name: "FocalPointY") { jsonValue }
+        Title: field(name: "Title") { jsonValue }
+        Description: field(name: "Description") { jsonValue }
+        StatusDate: field(name: "StatusDate") { jsonValue }
+        StatusTag: field(name: "StatusTag") {
+          ... on LookupField {
+            targetItem {
+              id
+              Text: field(name: "Text") { jsonValue }
+              Icon: field(name: "Icon") {
+                ... on LookupField {
+                  targetItem {
+                    id
+                    name
+                    url: path
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    
+      contextItem: item(path: $contextItem, language: $language) {
+        ancestors(hasLayout: true) {
+          id
+          name
+          PageTitle: field(name: "PageTitle") { ... on TextField { value } }
+          NavigationTitle: field(name: "NavigationTitle") { ... on TextField { value } }
+          IsExcludedFromBreadcrumb: field(name: "ExcludeFromBreadcrumb") {
+            ... on CheckboxField { value: boolValue }
+          }
+          url { path }
+        }
+      }
+    }
+    
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
+  Hint: Datasource Template
+  Value: /sitecore/templates/Feature/abc/Hero/Guide Header/Guide Header
+- ID: "a77e8568-1ab3-44f1-a664-b7c37ec7810d"
+  Hint: Parameters Template
+  Value: "{0E7FAAF8-DAD9-4AFE-9D2B-4C93500F3CC2}"
+- ID: "b4bbc0be-7619-4678-b2f7-947d84aa77a9"
+  Hint: Content Dependencies
+  Value: "{07BB8ABE-7A1D-4AF2-B7D6-BF5140AAAF21}"
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "query:$site/*[@@name='Data']/*[@@templatename='Guide Header Folder']"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "f6b0f801-3283-4ec9-89c2-732bca92095b"
+Languages:
+- Language: en
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "fa6f84de-2cf6-4d5e-9cdd-a6dcb7467b44"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261016T064617Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "27a120c7-4b29-484d-8545-5d9b00a865a5"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261016T070110Z

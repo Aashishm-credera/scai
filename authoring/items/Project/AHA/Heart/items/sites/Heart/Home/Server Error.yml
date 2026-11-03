@@ -1,0 +1,36 @@
+﻿---
+ID: "b84a082a-ea0d-4103-9f7d-9ab1961bf1b3"
+Parent: "28d3cfb2-67d9-4697-bd26-2c6989d26f2e"
+Template: "1b7b7c23-5a13-4664-b42d-176b23d19c18"
+Path: /sitecore/content/abc/Heart/Home/Server Error
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 500
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "6753c800-6e97-48cc-9e81-c8d149687e45"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1ef6044f-f740-40f4-93ef-87662b60d828"
+      Hint: PageTitle
+      Value: Server Error
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261009T101205Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8cc1ad04-d65d-49a7-997f-777547ca4e47"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261009T101247Z
+    - ID: "fb3d30c2-a65a-48ee-8b02-afcb0d3109f2"
+      Hint: MetaDescription
+      Value: Server Error

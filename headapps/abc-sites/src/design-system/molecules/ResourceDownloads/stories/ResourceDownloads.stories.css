@@ -1,0 +1,4 @@
+/* Page Builder consumes these metadata markers; the isolated canvas keeps them hidden. */
+.resource-downloads-story .scpm {
+  display: none;
+}

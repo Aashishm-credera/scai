@@ -1,0 +1,77 @@
+﻿---
+ID: "a472ed6d-9274-48b0-8a22-2f688284af60"
+Parent: "3c56fbd7-e056-4b22-b635-885a53419e51"
+Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
+Path: /sitecore/layout/Renderings/Feature/abc/Page Content/Accordion
+SharedFields:
+- ID: "037fe404-dd19-4bf7-8e30-4dadf68b27b0"
+  Hint: componentName
+  Value: Accordion
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: /~/icon/office/32x32/drop_down_list.png
+- ID: "17bb046a-a32a-41b3-8315-81217947611b"
+  Hint: ComponentQuery
+  Value: |
+    query AccordionItems($datasource: String!, $language: String!) {
+      datasource: item(path: $datasource, language: $language) {
+        id
+        Title: field(name: "Title"){
+          ...on RichTextField { jsonValue }
+        }
+        
+        children(includeTemplateIDs:"{A30E8B2B-2F43-467E-87B9-B7CF0519F714}"){
+          results {
+            id
+            Question: field(name: "Question") { jsonValue}
+            Answer: field(name: "Answer") { jsonValue}
+            Anchor: field(name: "Anchor") { jsonValue}
+          }
+        }
+      }
+    }
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
+  Hint: Datasource Template
+  Value: /sitecore/templates/Feature/abc/Page Content/Accordion/Accordion
+- ID: "a77e8568-1ab3-44f1-a664-b7c37ec7810d"
+  Hint: Parameters Template
+  Value: "{016C1DCB-C115-43FC-B366-820E9C90DBA7}"
+- ID: "b4bbc0be-7619-4678-b2f7-947d84aa77a9"
+  Hint: Content Dependencies
+  Value: "{B0B5B0CD-6445-4FAE-A989-6CA9C50CC29A}"
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "query:$site/*[@@name='Data']/*[@@templatename='Accordion Folder']"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "f2185696-4628-46fa-beaa-515d77ffbc2b"
+Languages:
+- Language: en
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "d315138a-4019-4d55-b868-0a5e1e0784e2"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261023T071218Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b9a8b146-2ad5-4a98-97eb-38603dff089b"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\rossandro.delacruz.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261028T141032Z

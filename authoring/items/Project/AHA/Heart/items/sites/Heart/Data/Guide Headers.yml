@@ -1,0 +1,23 @@
+﻿---
+ID: "3536c3fa-798d-473f-94ee-19c58631789b"
+Parent: "6f6c7916-2503-441e-8100-3483c737cef2"
+Template: "be0038e0-5fc2-44ee-bda4-4bf085642665"
+Path: /sitecore/content/abc/Heart/Data/Guide Headers
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261016T063840Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c4c005dc-5a14-4325-871c-ff38f3e6e949"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\karlo.tito.consultant@heart.org
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261016T063840Z

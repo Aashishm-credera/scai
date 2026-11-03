@@ -1,0 +1,63 @@
+{/*
+  The only hand-authored page in this folder. Everything else under Design reads its
+  content out of design-tokens/generated/tokens.ts, so no token value is written here. Prose
+  about the pipeline only. See design-tokens/README.md for the full contributor guide.
+*/}
+
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design/Design Tokens" />
+
+# Design tokens
+
+A design token is a named value, like "the main brand red" or "the medium gap". Everything
+under **Design** is generated from one Figma file, and both Storybook and the live site
+read the same generated output. There is no second copy to keep in sync.
+
+```
+design-tokens/figma-export.json   the designer's export, the only file they edit
+  → npm run tokens:build
+      → src/design-system/tokens/generated/*.css       what the app and Storybook load
+      → design-tokens/generated/      the same values, readable from code
+```
+
+## The two layers
+
+**Primitives** are the raw scales, like `--abc-color-brand-primary-500` or `--abc-radius-8`.
+Think of these as the full box of paint. Do not use them directly in a component.
+
+**Semantic tokens** name a purpose, like `--abc-surface-brand-brand-1` or
+`--abc-spacing-gap-md`, and point at a primitive. These are what you write in a `className`,
+either directly or through the `bg-abc-*` and `text-abc-*` aliases.
+
+The reason for the split: if the brand red ever changes, "the main brand surface" keeps
+meaning the right thing, while "this particular red" has to be found and replaced everywhere.
+
+## Sizes change with the screen
+
+Spacing and type sizes are responsive at the token layer. The value jumps to the next step when
+the screen crosses a breakpoint. It does not scale smoothly in between. Use the viewport
+toolbar on the Spacing and Typography pages to watch each step.
+
+## Changing a token
+
+Token values are never edited in this repo. A designer updates the Figma export, then:
+
+```bash
+npm run tokens:build     # regenerate the CSS and the readable copy
+npm run tokens:check     # what CI runs: tests, then the build
+```
+
+The generated files are committed alongside the export, and CI fails if regenerating produces
+a difference. `design-tokens/reports/changes.md` shows what moved since the last approved set.
+
+## Pages
+
+| Page        | What it documents                                      |
+| ----------- | ------------------------------------------------------ |
+| Colors      | The full palette, and the named roles you actually use |
+| Typography  | The display, heading, body and label scales            |
+| Spacing     | Gap and inset sizes, which change with screen width    |
+| Radius      | Named corner roundings                                 |
+| Elevation   | Shadow presets and focus rings                         |
+| Breakpoints | The screen widths everything responsive switches at    |

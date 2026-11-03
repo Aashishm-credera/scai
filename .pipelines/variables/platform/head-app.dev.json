@@ -1,0 +1,39 @@
+{
+  "regions": [
+    {
+      "name": "primary",
+      "resourceGroup": "abc-dev-aoecxzo",
+      "appServiceName": "abc-dev-aoecxzo-app-website",
+      "slotName": "s01"
+    }
+  ],
+  "healthcheckEndpoint": "/api/dataweavers/diagnostics/ready",
+  "nodeVersion": "24.16.0",
+  "keyVaultName": "abc-dev-kv-app",
+  "infrastructureResourceGroup": "abc-dev",
+  "targetSlot": "production",
+  "changeDetection": {
+    "actions": {
+      "deploy": ["headapps/abc-sites/**"]
+    }
+  },
+  "healthCheck": {
+    "preSwapPaths": [ "/api/dataweavers/diagnostics/ready" ],
+    "postSwapPaths": [ "/api/dataweavers/diagnostics/ready" ]
+  },
+  "cachePurge": {
+    "enabled": true,
+    "failOnError": false,
+    "zoneId": "4b9473404854ecb191760594e94ea309",
+    "apiToken": "Secret:CloudflarePurgeToken",
+    "tags": ["abc-dev-app-cfpurge"],
+    "urls": [],
+    "hostnames": [],
+    "prefixes": []
+  },
+  "wrapper": {
+    "variant": "variant-1",
+    "patchConfig": true,
+    "includeRedisPageCache": false
+  }
+}
